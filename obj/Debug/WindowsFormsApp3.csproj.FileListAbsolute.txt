@@ -8,3 +8,13 @@ C:\Users\Kim Järvinen\source\repos\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.
 C:\Users\Kim Järvinen\source\repos\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
 C:\Users\Kim Järvinen\source\repos\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
 C:\Users\Kim Järvinen\source\repos\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Debug\WindowsFormsApp3.exe
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.csprojAssemblyReference.cache
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.Form1.resources
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.exe
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Debug\WindowsFormsApp3.pdb
