@@ -25,6 +25,10 @@ namespace WindowsFormsApp3
                 comboBox10.Enabled = false;
                 comboBox5.Enabled = false;
                 comboBox9.Enabled = false;
+                comboBox13.Enabled = false;
+                comboBox15.Enabled = false;
+                comboBox14.Enabled = false;
+                comboBox12.Enabled = false;
             }
         }
 
@@ -34,14 +38,28 @@ namespace WindowsFormsApp3
         bool box4_Set = false;
         bool box5_Set = false;
 
+        bool r_box1_Set = false;
+        bool r_box2_Set = false;
+        bool r_box3_Set = false;
+        bool r_box4_Set = false;
+        bool r_box5_Set = false;
+
         bool minus_box1_Set = false;
         bool minus_box2_Set = false;
         bool minus_box3_Set = false;
         bool minus_box4_Set = false;
         bool minus_box5_Set = false;
 
-        int count = 0;
+        bool r_minus_box1_Set = false;
+        bool r_minus_box2_Set = false;
+        bool r_minus_box3_Set = false;
+        bool r_minus_box4_Set = false;
+        bool r_minus_box5_Set = false;
 
+        int count = 0;
+        int count2 = 0;
+
+        // Left side
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (box1_Set == false)
@@ -115,6 +133,14 @@ namespace WindowsFormsApp3
                     comboBox5.Enabled = true;
                 if (minus_box5_Set == false)
                     comboBox9.Enabled = true;
+                if (r_box5_Set == false)
+                    comboBox13.Enabled = true;
+                if (r_box4_Set == false)
+                    comboBox15.Enabled = true;
+                if (r_minus_box4_Set == false)
+                    comboBox14.Enabled = true;
+                if (r_minus_box5_Set == false)
+                    comboBox12.Enabled = true;
             }
             else
             {
@@ -122,10 +148,15 @@ namespace WindowsFormsApp3
                 comboBox10.Enabled = false;
                 comboBox5.Enabled = false;
                 comboBox9.Enabled = false;
+
+                comboBox13.Enabled = false;
+                comboBox15.Enabled = false;
+                comboBox14.Enabled = false;
+                comboBox12.Enabled = false;
             }
         }
 
-        // Minus points
+        // Left minus points
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (minus_box1_Set == false)
@@ -183,6 +214,128 @@ namespace WindowsFormsApp3
 
                 count -= Convert.ToInt32(comboBox9.Text);
                 textBox2.Text = Convert.ToString(count);
+            }
+        }
+
+        // Right side
+        private void comboBox21_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_box1_Set == false)
+            {
+                r_box1_Set = true;
+                comboBox21.Enabled = false;
+
+                count2 += Convert.ToInt32(comboBox21.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox19_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_box2_Set == false)
+            {
+                r_box2_Set = true;
+                comboBox19.Enabled = false;
+
+                count2 += Convert.ToInt32(comboBox19.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox17_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_box3_Set == false)
+            {
+                r_box3_Set = true;
+                comboBox17.Enabled = false;
+
+                count2 += Convert.ToInt32(comboBox17.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox15_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_box4_Set == false)
+            {
+                r_box4_Set = true;
+                comboBox15.Enabled = false;
+
+                count2 += Convert.ToInt32(comboBox15.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_box5_Set == false)
+            {
+                r_box5_Set = true;
+                comboBox13.Enabled = false;
+
+                count2 += Convert.ToInt32(comboBox13.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        // Right minus points
+        private void comboBox20_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_minus_box1_Set == false)
+            {
+                r_minus_box1_Set = true;
+                comboBox20.Enabled = false;
+
+                count2 -= Convert.ToInt32(comboBox20.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox18_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_minus_box2_Set == false)
+            {
+                r_minus_box2_Set = true;
+                comboBox18.Enabled = false;
+
+                count2 -= Convert.ToInt32(comboBox18.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox16_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_minus_box3_Set == false)
+            {
+                r_minus_box3_Set = true;
+                comboBox16.Enabled = false;
+
+                count2 -= Convert.ToInt32(comboBox16.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_minus_box4_Set == false)
+            {
+                r_minus_box4_Set = true;
+                comboBox14.Enabled = false;
+
+                count2 -= Convert.ToInt32(comboBox14.Text);
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (r_minus_box5_Set == false)
+            {
+                r_minus_box5_Set = true;
+                comboBox12.Enabled = false;
+
+                count2 -= Convert.ToInt32(comboBox12.Text);
+                textBox3.Text = Convert.ToString(count2);
             }
         }
     }
