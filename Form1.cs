@@ -59,16 +59,127 @@ namespace WindowsFormsApp3
         int count = 0;
         int count2 = 0;
 
+        public void Save()
+        {
+            // Save table as a file
+        }
+
+        public void Clear()
+        {
+            // Clear only box
+        }
+
+        public void Clear_All()
+        {
+             box1_Set = false;
+             box2_Set = false;
+             box3_Set = false;
+             box4_Set = false;
+             box5_Set = false;
+
+             r_box1_Set = false;
+             r_box2_Set = false;
+             r_box3_Set = false;
+             r_box4_Set = false;
+             r_box5_Set = false;
+
+             minus_box1_Set = false;
+             minus_box2_Set = false;
+             minus_box3_Set = false;
+             minus_box4_Set = false;
+             minus_box5_Set = false;
+
+             r_minus_box1_Set = false;
+             r_minus_box2_Set = false;
+             r_minus_box3_Set = false;
+             r_minus_box4_Set = false;
+             r_minus_box5_Set = false;
+
+             count = 0;
+             count2 = 0;
+
+            // Fighter name & total points
+            textBox1.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+            textBox4.Text = null;
+
+            // Points & minus points
+            comboBox1.Text = null;
+            comboBox2.Text = null;
+            comboBox3.Text = null;
+            comboBox4.Text = null;
+            comboBox5.Text = null;
+            comboBox6.Text = null;
+            comboBox7.Text = null;
+            comboBox8.Text = null;
+            comboBox9.Text = null;
+            comboBox10.Text = null;
+            comboBox12.Text = null;
+            comboBox13.Text = null;
+            comboBox14.Text = null;
+            comboBox15.Text = null;
+            comboBox16.Text = null;
+            comboBox17.Text = null;
+            comboBox18.Text = null;
+            comboBox19.Text = null;
+            comboBox20.Text = null;
+            comboBox21.Text = null;
+
+            // Rounds selector
+            comboBox11.Text = "3";
+
+            // Re-disable round 4-5 boxes
+            comboBox6.Enabled = false;
+            comboBox10.Enabled = false;
+            comboBox5.Enabled = false;
+            comboBox9.Enabled = false;
+            comboBox13.Enabled = false;
+            comboBox15.Enabled = false;
+            comboBox14.Enabled = false;
+            comboBox12.Enabled = false;
+
+            // Re-enable round 1-3 boxes
+            // Left points
+            comboBox1.Enabled = true;
+            comboBox3.Enabled = true;
+            comboBox8.Enabled = true;
+            comboBox6.Enabled = true;
+            comboBox10.Enabled = true;
+            // Left cuts
+            comboBox2.Enabled = true;
+            comboBox4.Enabled = true;
+            comboBox7.Enabled = true;
+            comboBox5.Enabled = true;
+            comboBox9.Enabled = true;
+            // Right points
+            comboBox21.Enabled = true;
+            comboBox19.Enabled = true;
+            comboBox17.Enabled = true;
+            comboBox15.Enabled = true;
+            comboBox13.Enabled = true;
+            // Right cuts
+            comboBox20.Enabled = true;
+            comboBox18.Enabled = true;
+            comboBox16.Enabled = true;
+            comboBox14.Enabled = true;
+            comboBox12.Enabled = true;
+        }
+
         // Left side
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (box1_Set == false)
+            if (comboBox1.Text != null && comboBox1.Text != "") // This everywhere
+            {
+                if (box1_Set == false)
             {
                 box1_Set = true;
                 comboBox1.Enabled = false;
 
+
             count += Convert.ToInt32(comboBox1.Text);
             textBox2.Text = Convert.ToString(count);
+            }
             }
         }
 
@@ -337,6 +448,11 @@ namespace WindowsFormsApp3
                 count2 -= Convert.ToInt32(comboBox12.Text);
                 textBox3.Text = Convert.ToString(count2);
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            Clear_All();
         }
     }
 }
