@@ -486,7 +486,7 @@ namespace WindowsFormsApp3
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to reset the scoreboard?", "Reset the scoreboard?", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to reset the scoreboard values?", "Reset all values?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -667,10 +667,10 @@ namespace WindowsFormsApp3
             count2 = 0;
 
             // Fighter name & total points
-            textBox1.Text = null;
+            // textBox1.Text = null;
+            // textBox4.Text = null;
             textBox2.Text = null;
             textBox3.Text = null;
-            textBox4.Text = null;
 
             // Points & minus points
             comboBox1.Text = null;

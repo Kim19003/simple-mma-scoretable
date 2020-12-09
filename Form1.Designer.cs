@@ -224,8 +224,10 @@ namespace WindowsFormsApp3
             // 
             // textBox1
             // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(61, 46);
+            this.textBox1.MaxLength = 15;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 37);
@@ -412,8 +414,10 @@ namespace WindowsFormsApp3
             // 
             // textBox4
             // 
+            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(372, 46);
+            this.textBox4.MaxLength = 15;
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(182, 37);
@@ -614,21 +618,21 @@ namespace WindowsFormsApp3
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(308, 409);
+            this.clearButton.Location = new System.Drawing.Point(310, 419);
             this.clearButton.Name = "clearButton";
-            this.clearButton.Size = new System.Drawing.Size(85, 37);
-            this.clearButton.TabIndex = 49;
-            this.clearButton.Text = "Reset";
+            this.clearButton.Size = new System.Drawing.Size(112, 37);
+            this.clearButton.TabIndex = 50;
+            this.clearButton.Text = "Reset Values";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(217, 409);
+            this.saveButton.Location = new System.Drawing.Point(192, 419);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(85, 37);
-            this.saveButton.TabIndex = 50;
-            this.saveButton.Text = "Save";
+            this.saveButton.Size = new System.Drawing.Size(112, 37);
+            this.saveButton.TabIndex = 49;
+            this.saveButton.Text = "Save Scoreboard";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
