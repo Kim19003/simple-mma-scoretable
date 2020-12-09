@@ -231,6 +231,7 @@ namespace WindowsFormsApp3
             this.textBox1.Size = new System.Drawing.Size(182, 37);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.fighter1_TextChanged);
             // 
             // textBox2
             // 
@@ -418,6 +419,7 @@ namespace WindowsFormsApp3
             this.textBox4.Size = new System.Drawing.Size(182, 37);
             this.textBox4.TabIndex = 23;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.fighter2_TextChanged);
             // 
             // comboBox12
             // 
