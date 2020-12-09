@@ -616,7 +616,7 @@ namespace WindowsFormsApp3
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(85, 37);
             this.clearButton.TabIndex = 49;
-            this.clearButton.Text = "Clear";
+            this.clearButton.Text = "Reset";
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
@@ -628,6 +628,7 @@ namespace WindowsFormsApp3
             this.saveButton.TabIndex = 50;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Form1
             // 
