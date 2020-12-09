@@ -486,7 +486,7 @@ namespace WindowsFormsApp3
 
         private void clearButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to reset the table?", "Reset the table?", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to reset the scoreboard?", "Reset the scoreboard?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -500,7 +500,7 @@ namespace WindowsFormsApp3
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to save the table?", "Save the table?", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to save the scoreboard?", "Save the scoreboard?", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
@@ -518,6 +518,7 @@ namespace WindowsFormsApp3
             string dateNow = Convert.ToString(DateNow);
 
             SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.FileName = "Scoreboard.txt";
             fileDialog.Filter = "Text files (*.txt)|*.txt";
             fileDialog.RestoreDirectory = true;
 
@@ -594,6 +595,7 @@ namespace WindowsFormsApp3
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
+
                         sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
