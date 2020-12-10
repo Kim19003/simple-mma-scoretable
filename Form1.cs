@@ -752,5 +752,61 @@ namespace WindowsFormsApp3
             l_totalPoints = 0;
             r_totalPoints = 0;
         }
+
+        private void resetR1_Button_Click(object sender, EventArgs e)
+        {
+            int round1_value = 0;
+
+            box1_Set = false;
+            comboBox1.Enabled = true;
+            l_points1 = 0;
+
+            if (!String.IsNullOrEmpty(comboBox1.Text))
+                round1_value += Convert.ToInt32(comboBox1.Text);
+
+            minus_box1_Set = false;
+            comboBox2.Enabled = true;
+            l_cuts1 = 0;
+
+            if (!String.IsNullOrEmpty(comboBox2.Text))
+                round1_value -= Convert.ToInt32(comboBox2.Text);
+
+            r_box1_Set = false;
+            comboBox21.Enabled = true;
+            r_points1 = 0;
+
+            if (!String.IsNullOrEmpty(comboBox21.Text))
+                round1_value += Convert.ToInt32(comboBox21.Text);
+
+            r_minus_box1_Set = false;
+            comboBox20.Enabled = true;
+            r_cuts1 = 0;
+
+            if (!String.IsNullOrEmpty(comboBox20.Text))
+                round1_value -= Convert.ToInt32(comboBox20.Text);
+
+            //count -= round1_value;
+            textBox2.Text = Convert.ToString(count - round1_value);
+        }
+
+        private void resetR2_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetR3_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetR4_Button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void resetR5_Button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -75,6 +75,11 @@ namespace WindowsFormsApp3
             this.label10 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.resetR1_Button = new System.Windows.Forms.Button();
+            this.resetR2_Button = new System.Windows.Forms.Button();
+            this.resetR3_Button = new System.Windows.Forms.Button();
+            this.resetR4_Button = new System.Windows.Forms.Button();
+            this.resetR5_Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -85,7 +90,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox1.Location = new System.Drawing.Point(88, 127);
+            this.comboBox1.Location = new System.Drawing.Point(95, 140);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 28);
             this.comboBox1.TabIndex = 1;
@@ -99,7 +104,7 @@ namespace WindowsFormsApp3
             this.comboBox2.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox2.Location = new System.Drawing.Point(179, 127);
+            this.comboBox2.Location = new System.Drawing.Point(186, 140);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(64, 28);
             this.comboBox2.TabIndex = 1;
@@ -114,7 +119,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox3.Location = new System.Drawing.Point(88, 161);
+            this.comboBox3.Location = new System.Drawing.Point(95, 174);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(85, 28);
             this.comboBox3.TabIndex = 2;
@@ -128,7 +133,7 @@ namespace WindowsFormsApp3
             this.comboBox4.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox4.Location = new System.Drawing.Point(179, 161);
+            this.comboBox4.Location = new System.Drawing.Point(186, 174);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(64, 28);
             this.comboBox4.TabIndex = 3;
@@ -143,7 +148,7 @@ namespace WindowsFormsApp3
             this.comboBox5.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox5.Location = new System.Drawing.Point(179, 229);
+            this.comboBox5.Location = new System.Drawing.Point(186, 242);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(64, 28);
             this.comboBox5.TabIndex = 7;
@@ -158,7 +163,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox6.Location = new System.Drawing.Point(88, 229);
+            this.comboBox6.Location = new System.Drawing.Point(95, 242);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(85, 28);
             this.comboBox6.TabIndex = 4;
@@ -172,7 +177,7 @@ namespace WindowsFormsApp3
             this.comboBox7.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox7.Location = new System.Drawing.Point(179, 195);
+            this.comboBox7.Location = new System.Drawing.Point(186, 208);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(64, 28);
             this.comboBox7.TabIndex = 5;
@@ -187,7 +192,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox8.Location = new System.Drawing.Point(88, 195);
+            this.comboBox8.Location = new System.Drawing.Point(95, 208);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(85, 28);
             this.comboBox8.TabIndex = 3;
@@ -201,7 +206,7 @@ namespace WindowsFormsApp3
             this.comboBox9.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox9.Location = new System.Drawing.Point(179, 263);
+            this.comboBox9.Location = new System.Drawing.Point(186, 276);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(64, 28);
             this.comboBox9.TabIndex = 9;
@@ -216,7 +221,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox10.Location = new System.Drawing.Point(88, 263);
+            this.comboBox10.Location = new System.Drawing.Point(95, 276);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(85, 28);
             this.comboBox10.TabIndex = 5;
@@ -226,7 +231,7 @@ namespace WindowsFormsApp3
             // 
             this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(61, 46);
+            this.textBox1.Location = new System.Drawing.Point(68, 59);
             this.textBox1.MaxLength = 15;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -240,7 +245,7 @@ namespace WindowsFormsApp3
             this.textBox2.BackColor = System.Drawing.SystemColors.Window;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox2.Location = new System.Drawing.Point(61, 337);
+            this.textBox2.Location = new System.Drawing.Point(68, 350);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
@@ -256,7 +261,7 @@ namespace WindowsFormsApp3
             this.comboBox11.Items.AddRange(new object[] {
             "3",
             "5"});
-            this.comboBox11.Location = new System.Drawing.Point(284, 74);
+            this.comboBox11.Location = new System.Drawing.Point(291, 87);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(47, 28);
             this.comboBox11.TabIndex = 12;
@@ -267,7 +272,7 @@ namespace WindowsFormsApp3
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 58);
+            this.label1.Location = new System.Drawing.Point(291, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 13;
@@ -277,7 +282,7 @@ namespace WindowsFormsApp3
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 23);
+            this.label2.Location = new System.Drawing.Point(67, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 14;
@@ -287,7 +292,7 @@ namespace WindowsFormsApp3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 104);
+            this.label3.Location = new System.Drawing.Point(94, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 15;
@@ -297,7 +302,7 @@ namespace WindowsFormsApp3
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(177, 104);
+            this.label4.Location = new System.Drawing.Point(184, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 20);
             this.label4.TabIndex = 16;
@@ -307,7 +312,7 @@ namespace WindowsFormsApp3
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 314);
+            this.label5.Location = new System.Drawing.Point(67, 327);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(95, 20);
             this.label5.TabIndex = 17;
@@ -316,7 +321,7 @@ namespace WindowsFormsApp3
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(369, 271);
+            this.label11.Location = new System.Drawing.Point(376, 284);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(24, 13);
             this.label11.TabIndex = 43;
@@ -325,7 +330,7 @@ namespace WindowsFormsApp3
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(369, 237);
+            this.label12.Location = new System.Drawing.Point(376, 250);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(24, 13);
             this.label12.TabIndex = 42;
@@ -334,7 +339,7 @@ namespace WindowsFormsApp3
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(369, 203);
+            this.label13.Location = new System.Drawing.Point(376, 216);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(24, 13);
             this.label13.TabIndex = 41;
@@ -343,7 +348,7 @@ namespace WindowsFormsApp3
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(369, 169);
+            this.label14.Location = new System.Drawing.Point(376, 182);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 13);
             this.label14.TabIndex = 40;
@@ -352,7 +357,7 @@ namespace WindowsFormsApp3
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(369, 135);
+            this.label15.Location = new System.Drawing.Point(376, 148);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(24, 13);
             this.label15.TabIndex = 39;
@@ -362,7 +367,7 @@ namespace WindowsFormsApp3
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(371, 314);
+            this.label16.Location = new System.Drawing.Point(378, 327);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(95, 20);
             this.label16.TabIndex = 38;
@@ -372,7 +377,7 @@ namespace WindowsFormsApp3
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(489, 104);
+            this.label17.Location = new System.Drawing.Point(496, 117);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(46, 20);
             this.label17.TabIndex = 37;
@@ -382,7 +387,7 @@ namespace WindowsFormsApp3
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(398, 104);
+            this.label18.Location = new System.Drawing.Point(405, 117);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(57, 20);
             this.label18.TabIndex = 36;
@@ -392,7 +397,7 @@ namespace WindowsFormsApp3
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(371, 23);
+            this.label19.Location = new System.Drawing.Point(378, 36);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(63, 20);
             this.label19.TabIndex = 35;
@@ -403,7 +408,7 @@ namespace WindowsFormsApp3
             this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F);
-            this.textBox3.Location = new System.Drawing.Point(372, 337);
+            this.textBox3.Location = new System.Drawing.Point(379, 350);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
@@ -416,7 +421,7 @@ namespace WindowsFormsApp3
             // 
             this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(372, 46);
+            this.textBox4.Location = new System.Drawing.Point(379, 59);
             this.textBox4.MaxLength = 15;
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
@@ -433,7 +438,7 @@ namespace WindowsFormsApp3
             this.comboBox12.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox12.Location = new System.Drawing.Point(490, 263);
+            this.comboBox12.Location = new System.Drawing.Point(497, 276);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(64, 28);
             this.comboBox12.TabIndex = 33;
@@ -448,7 +453,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox13.Location = new System.Drawing.Point(399, 263);
+            this.comboBox13.Location = new System.Drawing.Point(406, 276);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(85, 28);
             this.comboBox13.TabIndex = 30;
@@ -462,7 +467,7 @@ namespace WindowsFormsApp3
             this.comboBox14.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox14.Location = new System.Drawing.Point(490, 229);
+            this.comboBox14.Location = new System.Drawing.Point(497, 242);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(64, 28);
             this.comboBox14.TabIndex = 32;
@@ -477,7 +482,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox15.Location = new System.Drawing.Point(399, 229);
+            this.comboBox15.Location = new System.Drawing.Point(406, 242);
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(85, 28);
             this.comboBox15.TabIndex = 29;
@@ -491,7 +496,7 @@ namespace WindowsFormsApp3
             this.comboBox16.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox16.Location = new System.Drawing.Point(490, 195);
+            this.comboBox16.Location = new System.Drawing.Point(497, 208);
             this.comboBox16.Name = "comboBox16";
             this.comboBox16.Size = new System.Drawing.Size(64, 28);
             this.comboBox16.TabIndex = 31;
@@ -506,7 +511,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox17.Location = new System.Drawing.Point(399, 195);
+            this.comboBox17.Location = new System.Drawing.Point(406, 208);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(85, 28);
             this.comboBox17.TabIndex = 28;
@@ -520,7 +525,7 @@ namespace WindowsFormsApp3
             this.comboBox18.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox18.Location = new System.Drawing.Point(490, 161);
+            this.comboBox18.Location = new System.Drawing.Point(497, 174);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(64, 28);
             this.comboBox18.TabIndex = 27;
@@ -535,7 +540,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox19.Location = new System.Drawing.Point(399, 161);
+            this.comboBox19.Location = new System.Drawing.Point(406, 174);
             this.comboBox19.Name = "comboBox19";
             this.comboBox19.Size = new System.Drawing.Size(85, 28);
             this.comboBox19.TabIndex = 26;
@@ -549,7 +554,7 @@ namespace WindowsFormsApp3
             this.comboBox20.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.comboBox20.Location = new System.Drawing.Point(490, 127);
+            this.comboBox20.Location = new System.Drawing.Point(497, 140);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(64, 28);
             this.comboBox20.TabIndex = 24;
@@ -565,7 +570,7 @@ namespace WindowsFormsApp3
             "10",
             "9",
             "8"});
-            this.comboBox21.Location = new System.Drawing.Point(399, 127);
+            this.comboBox21.Location = new System.Drawing.Point(406, 140);
             this.comboBox21.Name = "comboBox21";
             this.comboBox21.Size = new System.Drawing.Size(85, 28);
             this.comboBox21.TabIndex = 25;
@@ -574,7 +579,7 @@ namespace WindowsFormsApp3
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(58, 271);
+            this.label6.Location = new System.Drawing.Point(65, 284);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(24, 13);
             this.label6.TabIndex = 48;
@@ -583,7 +588,7 @@ namespace WindowsFormsApp3
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 237);
+            this.label7.Location = new System.Drawing.Point(65, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(24, 13);
             this.label7.TabIndex = 47;
@@ -592,7 +597,7 @@ namespace WindowsFormsApp3
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 203);
+            this.label8.Location = new System.Drawing.Point(65, 216);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 13);
             this.label8.TabIndex = 46;
@@ -601,7 +606,7 @@ namespace WindowsFormsApp3
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(58, 169);
+            this.label9.Location = new System.Drawing.Point(65, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 13);
             this.label9.TabIndex = 45;
@@ -610,7 +615,7 @@ namespace WindowsFormsApp3
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(58, 135);
+            this.label10.Location = new System.Drawing.Point(65, 148);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 44;
@@ -618,7 +623,7 @@ namespace WindowsFormsApp3
             // 
             // clearButton
             // 
-            this.clearButton.Location = new System.Drawing.Point(310, 419);
+            this.clearButton.Location = new System.Drawing.Point(317, 428);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(112, 37);
             this.clearButton.TabIndex = 50;
@@ -628,7 +633,7 @@ namespace WindowsFormsApp3
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(192, 419);
+            this.saveButton.Location = new System.Drawing.Point(199, 428);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(112, 37);
             this.saveButton.TabIndex = 49;
@@ -636,11 +641,66 @@ namespace WindowsFormsApp3
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // resetR1_Button
+            // 
+            this.resetR1_Button.Location = new System.Drawing.Point(601, 140);
+            this.resetR1_Button.Name = "resetR1_Button";
+            this.resetR1_Button.Size = new System.Drawing.Size(95, 28);
+            this.resetR1_Button.TabIndex = 51;
+            this.resetR1_Button.Text = "Reset Round 1";
+            this.resetR1_Button.UseVisualStyleBackColor = true;
+            this.resetR1_Button.Click += new System.EventHandler(this.resetR1_Button_Click);
+            // 
+            // resetR2_Button
+            // 
+            this.resetR2_Button.Location = new System.Drawing.Point(601, 174);
+            this.resetR2_Button.Name = "resetR2_Button";
+            this.resetR2_Button.Size = new System.Drawing.Size(95, 28);
+            this.resetR2_Button.TabIndex = 52;
+            this.resetR2_Button.Text = "Reset Round 2";
+            this.resetR2_Button.UseVisualStyleBackColor = true;
+            this.resetR2_Button.Click += new System.EventHandler(this.resetR2_Button_Click);
+            // 
+            // resetR3_Button
+            // 
+            this.resetR3_Button.Location = new System.Drawing.Point(601, 208);
+            this.resetR3_Button.Name = "resetR3_Button";
+            this.resetR3_Button.Size = new System.Drawing.Size(95, 28);
+            this.resetR3_Button.TabIndex = 53;
+            this.resetR3_Button.Text = "Reset Round 3";
+            this.resetR3_Button.UseVisualStyleBackColor = true;
+            this.resetR3_Button.Click += new System.EventHandler(this.resetR3_Button_Click);
+            // 
+            // resetR4_Button
+            // 
+            this.resetR4_Button.Location = new System.Drawing.Point(601, 242);
+            this.resetR4_Button.Name = "resetR4_Button";
+            this.resetR4_Button.Size = new System.Drawing.Size(95, 28);
+            this.resetR4_Button.TabIndex = 54;
+            this.resetR4_Button.Text = "Reset Round 4";
+            this.resetR4_Button.UseVisualStyleBackColor = true;
+            this.resetR4_Button.Click += new System.EventHandler(this.resetR4_Button_Click);
+            // 
+            // resetR5_Button
+            // 
+            this.resetR5_Button.Location = new System.Drawing.Point(601, 276);
+            this.resetR5_Button.Name = "resetR5_Button";
+            this.resetR5_Button.Size = new System.Drawing.Size(95, 28);
+            this.resetR5_Button.TabIndex = 55;
+            this.resetR5_Button.Text = "Reset Round 5";
+            this.resetR5_Button.UseVisualStyleBackColor = true;
+            this.resetR5_Button.Click += new System.EventHandler(this.resetR5_Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 534);
+            this.ClientSize = new System.Drawing.Size(758, 513);
+            this.Controls.Add(this.resetR5_Button);
+            this.Controls.Add(this.resetR4_Button);
+            this.Controls.Add(this.resetR3_Button);
+            this.Controls.Add(this.resetR2_Button);
+            this.Controls.Add(this.resetR1_Button);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.label6);
@@ -744,6 +804,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button resetR1_Button;
+        private System.Windows.Forms.Button resetR2_Button;
+        private System.Windows.Forms.Button resetR3_Button;
+        private System.Windows.Forms.Button resetR4_Button;
+        private System.Windows.Forms.Button resetR5_Button;
     }
 }
 
