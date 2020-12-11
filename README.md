@@ -1,22 +1,15 @@
-# company-search
-**Finnish Company Search Web App**
-(*Perfection of my school project "Mukero Company Search": https://github.com/Kim19003/nettisivut-app*)
+# simple-mma-scoretable
+**Simple MMA Scoretable**
+(*Simple and easy to use MMA scoretable.*)
 
 Planned upcoming changes:
-- ~~Box for the More details -button~~ ✔
-- ~~Highlighted company information on the More details -page~~ ✔
-- ~~Code cleaning~~ ✔
-- ~~Better error handling and more reasonable error messages~~ ✔
-- ~~Removal of all the unnecessary stuff~~ ✔
-- ~~Redesign~~ ✔
+- None
 
 Known errors:
-- All-time search not working quite yet (under construction 👷)
-- Searching with only using "OY" gives an error message
+- None
 
 Pictures:
 <p align="left">
-  <img src="https://i.imgur.com/IEeFiih.jpg" width="420" title="Search page"><br><br>
-  <img src="https://i.imgur.com/vIfmJBF.jpg" width="420" title="Results page"><br><br>
-  <img src="https://i.imgur.com/Kft2G69.jpg" width="420" title="More details page">
+  <img src="https://i.imgur.com/PIiwvSs.png" width="500" title="The software"><br><br>
+  <img src="https://i.imgur.com/TGY7TJh.png" width="500" title="Saved scoreboard in a text file"><br><br>
 </p>
