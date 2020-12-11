@@ -10,6 +10,6 @@ Known errors:
 
 Pictures:
 <p align="left">
-  <img src="https://i.imgur.com/PIiwvSs.png" width="500" title="The software"><br><br>
-  <img src="https://i.imgur.com/TGY7TJh.png" width="500" title="Saved scoreboard in a text file"><br><br>
+  <img src="https://i.imgur.com/PIiwvSs.png" width="600" title="The software"><br><br>
+  <img src="https://i.imgur.com/TGY7TJh.png" width="600" title="Saved scoreboard in a text file"><br><br>
 </p>
