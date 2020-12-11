@@ -30,6 +30,9 @@ namespace WindowsFormsApp3
                 comboBox15.Enabled = false;
                 comboBox14.Enabled = false;
                 comboBox12.Enabled = false;
+
+                resetR4_Button.Enabled = false;
+                resetR5_Button.Enabled = false;
             }
         }
 
@@ -209,20 +212,70 @@ namespace WindowsFormsApp3
                     comboBox14.Enabled = true;
                 if (r_minus_box5_Set == false)
                     comboBox12.Enabled = true;
+
+                resetR4_Button.Enabled = true;
+                resetR5_Button.Enabled = true;
             }
             else
             {
                 rounds_amount = 3;
+
+                int l_round4_value = l_points4 - l_cuts4;
+                int l_round5_value = l_points5 - l_cuts5;
+                int r_round4_value = r_points4 - r_cuts4;
+                int r_round5_value = r_points5 - r_cuts5;
 
                 comboBox6.Enabled = false;
                 comboBox10.Enabled = false;
                 comboBox5.Enabled = false;
                 comboBox9.Enabled = false;
 
+                comboBox6.Text = null;
+                comboBox10.Text = null;
+                comboBox5.Text = null;
+                comboBox9.Text = null;
+
                 comboBox13.Enabled = false;
                 comboBox15.Enabled = false;
                 comboBox14.Enabled = false;
                 comboBox12.Enabled = false;
+
+                comboBox13.Text = null;
+                comboBox15.Text = null;
+                comboBox14.Text = null;
+                comboBox12.Text = null;
+
+                box4_Set = false;
+                box5_Set = false;
+                r_box4_Set = false;
+                r_box5_Set = false;
+                minus_box4_Set = false;
+                minus_box5_Set = false;
+                r_minus_box4_Set = false;
+                r_minus_box5_Set = false;
+
+                l_points4 = 0;
+                l_points5 = 0;
+                l_cuts4 = 0;
+                l_cuts5 = 0;
+                r_points4 = 0;
+                r_points5 = 0;
+                r_cuts4 = 0;
+                r_cuts5 = 0;
+
+                resetR4_Button.Enabled = false;
+                resetR5_Button.Enabled = false;
+
+                if (count > 0)
+                {
+                count -= l_round4_value + l_round5_value;
+                textBox2.Text = Convert.ToString(count);
+                }
+                if (count2 > 0)
+                {
+                count2 -= r_round4_value + r_round5_value;
+                textBox3.Text = Convert.ToString(count2);
+                }
             }
         }
 
@@ -518,11 +571,12 @@ namespace WindowsFormsApp3
             string dateNow = Convert.ToString(DateNow);
 
             SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.FileName = "Scoreboard.txt";
+            fileDialog.FileName = "My Scoreboard.txt";
             fileDialog.Filter = "Text files (*.txt)|*.txt";
             fileDialog.RestoreDirectory = true;
 
             string directoryPath; // Directory path
+
             if (textBox2.Text != null && textBox2.Text != "")
                 l_totalPoints = Convert.ToInt32(textBox2.Text); // Left total points
             if (textBox3.Text != null && textBox3.Text != "")
@@ -582,7 +636,7 @@ namespace WindowsFormsApp3
                 }
                 else // If file already exists
                 {
-                    File.WriteAllText(@directoryPath, string.Empty); // Empty the old file
+                    File.WriteAllText(@directoryPath, string.Empty); // Overwrite the old file
 
                     using (StreamWriter sw = File.AppendText(fileDialog.FileName))
                     {
@@ -667,8 +721,8 @@ namespace WindowsFormsApp3
             count2 = 0;
 
             // Fighter name & total points
-            // textBox1.Text = null;
-            // textBox4.Text = null;
+            textBox1.Text = null;
+            textBox4.Text = null;
             textBox2.Text = null;
             textBox3.Text = null;
 
@@ -706,6 +760,9 @@ namespace WindowsFormsApp3
             comboBox15.Enabled = false;
             comboBox14.Enabled = false;
             comboBox12.Enabled = false;
+
+            resetR4_Button.Enabled = false;
+            resetR5_Button.Enabled = false;
 
             // Re-enable round 1-3 boxes
             // Left points
@@ -755,58 +812,177 @@ namespace WindowsFormsApp3
 
         private void resetR1_Button_Click(object sender, EventArgs e)
         {
-            int round1_value = 0;
+            int l_round1_value = l_points1 - l_cuts1;
+            int r_round1_value = r_points1 - r_cuts1;
+
+            l_points1 = 0;
+            l_cuts1 = 0;
+
+            r_points1 = 0;
+            r_cuts1 = 0;
 
             box1_Set = false;
             comboBox1.Enabled = true;
-            l_points1 = 0;
-
-            if (!String.IsNullOrEmpty(comboBox1.Text))
-                round1_value += Convert.ToInt32(comboBox1.Text);
 
             minus_box1_Set = false;
             comboBox2.Enabled = true;
-            l_cuts1 = 0;
-
-            if (!String.IsNullOrEmpty(comboBox2.Text))
-                round1_value -= Convert.ToInt32(comboBox2.Text);
 
             r_box1_Set = false;
             comboBox21.Enabled = true;
-            r_points1 = 0;
-
-            if (!String.IsNullOrEmpty(comboBox21.Text))
-                round1_value += Convert.ToInt32(comboBox21.Text);
 
             r_minus_box1_Set = false;
             comboBox20.Enabled = true;
-            r_cuts1 = 0;
 
-            if (!String.IsNullOrEmpty(comboBox20.Text))
-                round1_value -= Convert.ToInt32(comboBox20.Text);
+            comboBox1.Text = null;
+            comboBox2.Text = null;
 
-            //count -= round1_value;
-            textBox2.Text = Convert.ToString(count - round1_value);
+            comboBox21.Text = null;
+            comboBox20.Text = null;
+
+            count -= l_round1_value;
+            count2 -= r_round1_value;
+            textBox2.Text = Convert.ToString(count);
+            textBox3.Text = Convert.ToString(count2);
         }
 
         private void resetR2_Button_Click(object sender, EventArgs e)
         {
+            int l_round2_value = l_points2 - l_cuts2;
+            int r_round2_value = r_points2 - r_cuts2;
 
+            l_points2 = 0;
+            l_cuts2 = 0;
+
+            r_points2 = 0;
+            r_cuts2 = 0;
+
+            box2_Set = false;
+            comboBox3.Enabled = true;
+
+            minus_box2_Set = false;
+            comboBox4.Enabled = true;
+
+            r_box2_Set = false;
+            comboBox19.Enabled = true;
+
+            r_minus_box2_Set = false;
+            comboBox18.Enabled = true;
+
+            comboBox3.Text = null;
+            comboBox4.Text = null;
+
+            comboBox19.Text = null;
+            comboBox18.Text = null;
+
+            count -= l_round2_value;
+            count2 -= r_round2_value;
+            textBox2.Text = Convert.ToString(count);
+            textBox3.Text = Convert.ToString(count2);
         }
 
         private void resetR3_Button_Click(object sender, EventArgs e)
         {
+            int l_round3_value = l_points3 - l_cuts3;
+            int r_round3_value = r_points3 - r_cuts3;
 
+            l_points3 = 0;
+            l_cuts3 = 0;
+
+            r_points3 = 0;
+            r_cuts3 = 0;
+
+            box3_Set = false;
+            comboBox8.Enabled = true;
+
+            minus_box3_Set = false;
+            comboBox7.Enabled = true;
+
+            r_box3_Set = false;
+            comboBox17.Enabled = true;
+
+            r_minus_box3_Set = false;
+            comboBox16.Enabled = true;
+
+            comboBox8.Text = null;
+            comboBox7.Text = null;
+
+            comboBox17.Text = null;
+            comboBox16.Text = null;
+
+            count -= l_round3_value;
+            count2 -= r_round3_value;
+            textBox2.Text = Convert.ToString(count);
+            textBox3.Text = Convert.ToString(count2);
         }
 
         private void resetR4_Button_Click(object sender, EventArgs e)
         {
+            int l_round4_value = l_points4 - l_cuts4;
+            int r_round4_value = r_points4 - r_cuts4;
 
+            l_points4 = 0;
+            l_cuts4 = 0;
+
+            r_points4 = 0;
+            r_cuts4 = 0;
+
+            box4_Set = false;
+            comboBox6.Enabled = true;
+
+            minus_box4_Set = false;
+            comboBox5.Enabled = true;
+
+            r_box4_Set = false;
+            comboBox15.Enabled = true;
+
+            r_minus_box4_Set = false;
+            comboBox14.Enabled = true;
+
+            comboBox6.Text = null;
+            comboBox5.Text = null;
+
+            comboBox15.Text = null;
+            comboBox14.Text = null;
+
+            count -= l_round4_value;
+            count2 -= r_round4_value;
+            textBox2.Text = Convert.ToString(count);
+            textBox3.Text = Convert.ToString(count2);
         }
 
         private void resetR5_Button_Click(object sender, EventArgs e)
         {
+            int l_round5_value = l_points5 - l_cuts5;
+            int r_round5_value = r_points5 - r_cuts5;
 
+            l_points5 = 0;
+            l_cuts5 = 0;
+
+            r_points5 = 0;
+            r_cuts5 = 0;
+
+            box5_Set = false;
+            comboBox10.Enabled = true;
+
+            minus_box5_Set = false;
+            comboBox9.Enabled = true;
+
+            r_box5_Set = false;
+            comboBox13.Enabled = true;
+
+            r_minus_box5_Set = false;
+            comboBox12.Enabled = true;
+
+            comboBox10.Text = null;
+            comboBox9.Text = null;
+
+            comboBox13.Text = null;
+            comboBox12.Text = null;
+
+            count -= l_round5_value;
+            count2 -= r_round5_value;
+            textBox2.Text = Convert.ToString(count);
+            textBox3.Text = Convert.ToString(count2);
         }
     }
 }

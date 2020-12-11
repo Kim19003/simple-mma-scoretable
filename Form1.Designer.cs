@@ -229,10 +229,9 @@ namespace WindowsFormsApp3
             // 
             // textBox1
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(68, 59);
-            this.textBox1.MaxLength = 15;
+            this.textBox1.MaxLength = 12;
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 37);
@@ -419,10 +418,9 @@ namespace WindowsFormsApp3
             // 
             // textBox4
             // 
-            this.textBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(379, 59);
-            this.textBox4.MaxLength = 15;
+            this.textBox4.MaxLength = 12;
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(182, 37);
@@ -623,6 +621,7 @@ namespace WindowsFormsApp3
             // 
             // clearButton
             // 
+            this.clearButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.clearButton.Location = new System.Drawing.Point(317, 428);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(112, 37);
@@ -633,6 +632,7 @@ namespace WindowsFormsApp3
             // 
             // saveButton
             // 
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Default;
             this.saveButton.Location = new System.Drawing.Point(199, 428);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(112, 37);
@@ -643,6 +643,7 @@ namespace WindowsFormsApp3
             // 
             // resetR1_Button
             // 
+            this.resetR1_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.resetR1_Button.Location = new System.Drawing.Point(601, 140);
             this.resetR1_Button.Name = "resetR1_Button";
             this.resetR1_Button.Size = new System.Drawing.Size(95, 28);
@@ -653,6 +654,7 @@ namespace WindowsFormsApp3
             // 
             // resetR2_Button
             // 
+            this.resetR2_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.resetR2_Button.Location = new System.Drawing.Point(601, 174);
             this.resetR2_Button.Name = "resetR2_Button";
             this.resetR2_Button.Size = new System.Drawing.Size(95, 28);
@@ -663,6 +665,7 @@ namespace WindowsFormsApp3
             // 
             // resetR3_Button
             // 
+            this.resetR3_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.resetR3_Button.Location = new System.Drawing.Point(601, 208);
             this.resetR3_Button.Name = "resetR3_Button";
             this.resetR3_Button.Size = new System.Drawing.Size(95, 28);
@@ -673,6 +676,7 @@ namespace WindowsFormsApp3
             // 
             // resetR4_Button
             // 
+            this.resetR4_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.resetR4_Button.Location = new System.Drawing.Point(601, 242);
             this.resetR4_Button.Name = "resetR4_Button";
             this.resetR4_Button.Size = new System.Drawing.Size(95, 28);
@@ -683,6 +687,7 @@ namespace WindowsFormsApp3
             // 
             // resetR5_Button
             // 
+            this.resetR5_Button.Cursor = System.Windows.Forms.Cursors.Default;
             this.resetR5_Button.Location = new System.Drawing.Point(601, 276);
             this.resetR5_Button.Name = "resetR5_Button";
             this.resetR5_Button.Size = new System.Drawing.Size(95, 28);
