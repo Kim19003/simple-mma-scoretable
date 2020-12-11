@@ -8,8 +8,5 @@ Planned upcoming changes:
 Known errors:
 - None
 
-Pictures:
-<p align="left">
-  <img src="https://i.imgur.com/PIiwvSs.png" width="600" title="The software"><br><br>
-  <img src="https://i.imgur.com/TGY7TJh.png" width="600" title="Saved scoreboard in a text file"><br><br>
-</p>
+Other mentions:
+- Software doesn't have any "cool" graphical implementations. It's only made for the functionality purposes.
