@@ -1,0 +1,9 @@
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Release\Simple MMA Scoreboard.exe.config
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Release\Simple MMA Scoreboard.exe
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\bin\Release\Simple MMA Scoreboard.pdb
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\WindowsFormsApp3.Form1.resources
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\SimpleMMAScoreboard.Properties.Resources.resources
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.exe
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.pdb
