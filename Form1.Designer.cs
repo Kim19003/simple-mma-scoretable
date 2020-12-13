@@ -80,7 +80,6 @@ namespace WindowsFormsApp3
             this.resetR3_Button = new System.Windows.Forms.Button();
             this.resetR4_Button = new System.Windows.Forms.Button();
             this.resetR5_Button = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -697,22 +696,11 @@ namespace WindowsFormsApp3
             this.resetR5_Button.UseVisualStyleBackColor = true;
             this.resetR5_Button.Click += new System.EventHandler(this.resetR5_Button_Click);
             // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(645, 491);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(101, 13);
-            this.label20.TabIndex = 56;
-            this.label20.Text = "Made by: Kim19003";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(758, 513);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.resetR5_Button);
             this.Controls.Add(this.resetR4_Button);
             this.Controls.Add(this.resetR3_Button);
@@ -826,7 +814,6 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Button resetR3_Button;
         private System.Windows.Forms.Button resetR4_Button;
         private System.Windows.Forms.Button resetR5_Button;
-        private System.Windows.Forms.Label label20;
     }
 }
 
