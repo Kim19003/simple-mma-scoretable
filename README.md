@@ -9,4 +9,4 @@ Known errors:
 - None
 
 Other mentions:
-- Software doesn't have any "cool" graphical implementations. It's only made for the functionality purposes.
+- Software doesn't have any "cool" graphical implementations. It's only made for the functional purposes.
