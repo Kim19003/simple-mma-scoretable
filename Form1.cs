@@ -843,8 +843,24 @@ namespace WindowsFormsApp3
 
             count -= l_round1_value;
             count2 -= r_round1_value;
-            textBox2.Text = null;
-            textBox3.Text = null;
+
+            if (count == 0)
+            {
+                textBox2.Text = null;
+            }
+            else
+            {
+                textBox2.Text = Convert.ToString(count);
+            }
+
+            if (count2 == 0)
+            {
+                textBox3.Text = null;
+            }
+            else
+            {
+                textBox3.Text = Convert.ToString(count2);
+            }
         }
 
         private void resetR2_Button_Click(object sender, EventArgs e)
@@ -878,8 +894,24 @@ namespace WindowsFormsApp3
 
             count -= l_round2_value;
             count2 -= r_round2_value;
-            textBox2.Text = null;
-            textBox3.Text = null;
+
+            if (count == 0)
+            {
+                textBox2.Text = null;
+            }
+            else
+            {
+                textBox2.Text = Convert.ToString(count);
+            }
+
+            if (count2 == 0)
+            {
+                textBox3.Text = null;
+            }
+            else
+            {
+                textBox3.Text = Convert.ToString(count2);
+            }
         }
 
         private void resetR3_Button_Click(object sender, EventArgs e)
@@ -913,8 +945,24 @@ namespace WindowsFormsApp3
 
             count -= l_round3_value;
             count2 -= r_round3_value;
-            textBox2.Text = null;
-            textBox3.Text = null;
+
+            if (count == 0)
+            {
+                textBox2.Text = null;
+            }
+            else
+            {
+                textBox2.Text = Convert.ToString(count);
+            }
+
+            if (count2 == 0)
+            {
+                textBox3.Text = null;
+            }
+            else
+            {
+                textBox3.Text = Convert.ToString(count2);
+            }
         }
 
         private void resetR4_Button_Click(object sender, EventArgs e)
@@ -948,8 +996,24 @@ namespace WindowsFormsApp3
 
             count -= l_round4_value;
             count2 -= r_round4_value;
-            textBox2.Text = null;
-            textBox3.Text = null;
+
+            if (count == 0)
+            {
+                textBox2.Text = null;
+            }
+            else
+            {
+                textBox2.Text = Convert.ToString(count);
+            }
+
+            if (count2 == 0)
+            {
+                textBox3.Text = null;
+            }
+            else
+            {
+                textBox3.Text = Convert.ToString(count2);
+            }
         }
 
         private void resetR5_Button_Click(object sender, EventArgs e)
@@ -983,8 +1047,24 @@ namespace WindowsFormsApp3
 
             count -= l_round5_value;
             count2 -= r_round5_value;
-            textBox2.Text = null;
-            textBox3.Text = null;
+
+            if (count == 0)
+            {
+                textBox2.Text = null;
+            }
+            else
+            {
+                textBox2.Text = Convert.ToString(count);
+            }
+
+            if (count2 == 0)
+            {
+                textBox3.Text = null;
+            }
+            else
+            {
+                textBox3.Text = Convert.ToString(count2);
+            }
         }
 
         // Thanks Aland Li
