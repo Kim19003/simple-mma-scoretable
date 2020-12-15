@@ -7,3 +7,4 @@ C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Sco
 C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.csproj.CoreCompileInputs.cache
 C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.exe
 C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.pdb
+C:\Users\Grill\Documents\GitHub\simple-mma-scoretable\obj\Release\Simple MMA Scoreboard.csprojAssemblyReference.cache

@@ -18,6 +18,8 @@ namespace WindowsFormsApp3
             InitializeComponent();
         }
 
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             if (comboBox11.Text == "3")
@@ -841,8 +843,8 @@ namespace WindowsFormsApp3
 
             count -= l_round1_value;
             count2 -= r_round1_value;
-            textBox2.Text = Convert.ToString(count);
-            textBox3.Text = Convert.ToString(count2);
+            textBox2.Text = null;
+            textBox3.Text = null;
         }
 
         private void resetR2_Button_Click(object sender, EventArgs e)
@@ -876,8 +878,8 @@ namespace WindowsFormsApp3
 
             count -= l_round2_value;
             count2 -= r_round2_value;
-            textBox2.Text = Convert.ToString(count);
-            textBox3.Text = Convert.ToString(count2);
+            textBox2.Text = null;
+            textBox3.Text = null;
         }
 
         private void resetR3_Button_Click(object sender, EventArgs e)
@@ -911,8 +913,8 @@ namespace WindowsFormsApp3
 
             count -= l_round3_value;
             count2 -= r_round3_value;
-            textBox2.Text = Convert.ToString(count);
-            textBox3.Text = Convert.ToString(count2);
+            textBox2.Text = null;
+            textBox3.Text = null;
         }
 
         private void resetR4_Button_Click(object sender, EventArgs e)
@@ -946,8 +948,8 @@ namespace WindowsFormsApp3
 
             count -= l_round4_value;
             count2 -= r_round4_value;
-            textBox2.Text = Convert.ToString(count);
-            textBox3.Text = Convert.ToString(count2);
+            textBox2.Text = null;
+            textBox3.Text = null;
         }
 
         private void resetR5_Button_Click(object sender, EventArgs e)
@@ -981,8 +983,58 @@ namespace WindowsFormsApp3
 
             count -= l_round5_value;
             count2 -= r_round5_value;
-            textBox2.Text = Convert.ToString(count);
-            textBox3.Text = Convert.ToString(count2);
+            textBox2.Text = null;
+            textBox3.Text = null;
         }
+
+        // Thanks Aland Li
+        private void Round4_EC(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            btn.ForeColor = btn.Enabled ? Color.Black : Color.Silver;
+        }
+
+        private void Round4_Paint(object sender, PaintEventArgs e)
+        {
+            var btn = (Button)sender;
+            var drawBrush = new SolidBrush(btn.ForeColor);
+            var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+            resetR4_Button.Text = string.Empty;
+            e.Graphics.DrawString("Reset Round 4", btn.Font, drawBrush, e.ClipRectangle, sf);
+            drawBrush.Dispose();
+            sf.Dispose();
+        }
+
+        private void Round5_EC(object sender, EventArgs e)
+        {
+            var btn = (Button)sender;
+            btn.ForeColor = btn.Enabled ? Color.Black : Color.Silver;
+        }
+
+        private void Round5_Paint(object sender, PaintEventArgs e)
+        {
+            var btn = (Button)sender;
+            var drawBrush = new SolidBrush(btn.ForeColor);
+            var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
+            resetR5_Button.Text = string.Empty;
+            e.Graphics.DrawString("Reset Round 5", btn.Font, drawBrush, e.ClipRectangle, sf);
+            drawBrush.Dispose();
+            sf.Dispose();
+        }
+
+        // Color comboBox items
+
+        /* var combo = sender as ComboBox;
+
+            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.SteelBlue), e.Bounds);
+            }
+            else
+            {
+                e.Graphics.FillRectangle(new SolidBrush(Color.LightCoral), e.Bounds);
+            }
+
+            e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Black), new Point(e.Bounds.X, e.Bounds.Y)); */
     }
 }
