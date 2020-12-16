@@ -8,6 +8,7 @@ using System.Text;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace WindowsFormsApp3
 {
@@ -111,15 +112,15 @@ namespace WindowsFormsApp3
             if (comboBox1.Text != null && comboBox1.Text != "")
             {
                 if (box1_Set == false)
-            {
-                box1_Set = true;
-                comboBox1.Enabled = false;
+                {
+                    box1_Set = true;
+                    comboBox1.Enabled = false;
 
-            l_points1 = Convert.ToInt32(comboBox1.Text);
+                    l_points1 = Convert.ToInt32(comboBox1.Text);
 
-            count += Convert.ToInt32(comboBox1.Text);
-            textBox2.Text = Convert.ToString(count);
-            }
+                    count += Convert.ToInt32(comboBox1.Text);
+                    textBox2.Text = Convert.ToString(count);
+                }
             }
         }
 
@@ -270,13 +271,13 @@ namespace WindowsFormsApp3
 
                 if (count > 0)
                 {
-                count -= l_round4_value + l_round5_value;
-                textBox2.Text = Convert.ToString(count);
+                    count -= l_round4_value + l_round5_value;
+                    textBox2.Text = Convert.ToString(count);
                 }
                 if (count2 > 0)
                 {
-                count2 -= r_round4_value + r_round5_value;
-                textBox3.Text = Convert.ToString(count2);
+                    count2 -= r_round4_value + r_round5_value;
+                    textBox3.Text = Convert.ToString(count2);
                 }
             }
         }
@@ -1067,7 +1068,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        // Thanks Aland Li
+        // Gray text for hidden boxes (thanks Aland Li!)
         private void Round4_EC(object sender, EventArgs e)
         {
             var btn = (Button)sender;
@@ -1102,9 +1103,20 @@ namespace WindowsFormsApp3
             sf.Dispose();
         }
 
-        // Color comboBox items
+        // Gradient color background
+        /*
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, ColorTranslator.FromHtml("#273859"), ColorTranslator.FromHtml("#273859"), 90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
+        */
 
-        /* var combo = sender as ComboBox;
+        // Color comboBox items
+        /*
+            var combo = sender as ComboBox;
 
             if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
             {
@@ -1115,6 +1127,29 @@ namespace WindowsFormsApp3
                 e.Graphics.FillRectangle(new SolidBrush(Color.LightCoral), e.Bounds);
             }
 
-            e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Black), new Point(e.Bounds.X, e.Bounds.Y)); */
+            e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Black), new Point(e.Bounds.X, e.Bounds.Y));
+        */
+
+        // Round borders (thanks Custom UI!)
+        /*
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
+        public Form1()
+        {
+            InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+        }
+        */
     }
 }
