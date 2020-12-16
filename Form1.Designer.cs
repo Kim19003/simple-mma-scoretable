@@ -267,7 +267,6 @@ namespace WindowsFormsApp3
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(182, 33);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "McGregor";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.fighter1_TextChanged);
             // 
@@ -497,7 +496,6 @@ namespace WindowsFormsApp3
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(182, 33);
             this.textBox4.TabIndex = 23;
-            this.textBox4.Text = "Poirier";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.TextChanged += new System.EventHandler(this.fighter2_TextChanged);
             // 
