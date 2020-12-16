@@ -95,7 +95,7 @@ namespace WindowsFormsApp3
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Pristina", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Ebrima", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "10",
@@ -103,7 +103,7 @@ namespace WindowsFormsApp3
             "8"});
             this.comboBox1.Location = new System.Drawing.Point(79, 167);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(85, 37);
+            this.comboBox1.Size = new System.Drawing.Size(85, 38);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.Text = "10";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
