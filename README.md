@@ -10,5 +10,5 @@ Known errors:
 
 Pictures:
 <p align="left">
-  <img src="https://i.imgur.com/oDm4Dj4.png" width="580" title="Software"><br><br>
+  <img src="https://i.imgur.com/BRzjh8G.jpg" width="580" title="The software"><br><br>
 </p>
