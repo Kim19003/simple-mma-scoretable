@@ -1,7 +1,7 @@
-# simple-mma-scoretable
-**Simple MMA Scoretable**
-(*Simple and easy to use MMA scoretable.*)
-
+# Simple MMA Scoretable
+*Simple and easy to use MMA scoretable.*
+<br>
+<br>
 Planned upcoming changes:
 - ?
 
