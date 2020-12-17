@@ -1,4 +1,4 @@
-# Simple MMA Scoretable
+# Simple MMA Scoreboard
 *Simple and easy to use MMA scoretable.*
 <br>
 <br>
