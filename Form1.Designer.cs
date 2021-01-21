@@ -85,10 +85,16 @@ namespace WindowsFormsApp3
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.blueColor_Button = new System.Windows.Forms.Button();
+            this.pinkColor_Button = new System.Windows.Forms.Button();
+            this.whiteColor_Button = new System.Windows.Forms.Button();
+            this.darkColor_Button = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -869,6 +875,74 @@ namespace WindowsFormsApp3
             this.panel4.Size = new System.Drawing.Size(182, 45);
             this.panel4.TabIndex = 59;
             // 
+            // blueColor_Button
+            // 
+            this.blueColor_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(107)))));
+            this.blueColor_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.blueColor_Button.FlatAppearance.BorderSize = 0;
+            this.blueColor_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.blueColor_Button.Location = new System.Drawing.Point(1, 1);
+            this.blueColor_Button.Name = "blueColor_Button";
+            this.blueColor_Button.Size = new System.Drawing.Size(20, 18);
+            this.blueColor_Button.TabIndex = 60;
+            this.blueColor_Button.TabStop = false;
+            this.blueColor_Button.UseVisualStyleBackColor = false;
+            this.blueColor_Button.Click += new System.EventHandler(this.blueColor_Button_Click);
+            // 
+            // pinkColor_Button
+            // 
+            this.pinkColor_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.pinkColor_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pinkColor_Button.FlatAppearance.BorderSize = 0;
+            this.pinkColor_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pinkColor_Button.Location = new System.Drawing.Point(21, 1);
+            this.pinkColor_Button.Name = "pinkColor_Button";
+            this.pinkColor_Button.Size = new System.Drawing.Size(20, 18);
+            this.pinkColor_Button.TabIndex = 62;
+            this.pinkColor_Button.TabStop = false;
+            this.pinkColor_Button.UseVisualStyleBackColor = false;
+            this.pinkColor_Button.Click += new System.EventHandler(this.pinkColor_Button_Click);
+            // 
+            // whiteColor_Button
+            // 
+            this.whiteColor_Button.BackColor = System.Drawing.Color.White;
+            this.whiteColor_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.whiteColor_Button.FlatAppearance.BorderSize = 0;
+            this.whiteColor_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.whiteColor_Button.Location = new System.Drawing.Point(41, 1);
+            this.whiteColor_Button.Name = "whiteColor_Button";
+            this.whiteColor_Button.Size = new System.Drawing.Size(20, 18);
+            this.whiteColor_Button.TabIndex = 63;
+            this.whiteColor_Button.TabStop = false;
+            this.whiteColor_Button.UseVisualStyleBackColor = false;
+            this.whiteColor_Button.Click += new System.EventHandler(this.whiteColor_Button_Click);
+            // 
+            // darkColor_Button
+            // 
+            this.darkColor_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(33)))), ((int)(((byte)(41)))));
+            this.darkColor_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.darkColor_Button.FlatAppearance.BorderSize = 0;
+            this.darkColor_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.darkColor_Button.Location = new System.Drawing.Point(61, 1);
+            this.darkColor_Button.Name = "darkColor_Button";
+            this.darkColor_Button.Size = new System.Drawing.Size(20, 18);
+            this.darkColor_Button.TabIndex = 64;
+            this.darkColor_Button.TabStop = false;
+            this.darkColor_Button.UseVisualStyleBackColor = false;
+            this.darkColor_Button.Click += new System.EventHandler(this.darkColor_Button_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Gray;
+            this.panel5.Controls.Add(this.darkColor_Button);
+            this.panel5.Controls.Add(this.whiteColor_Button);
+            this.panel5.Controls.Add(this.pinkColor_Button);
+            this.panel5.Controls.Add(this.blueColor_Button);
+            this.panel5.Location = new System.Drawing.Point(650, 580);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(82, 20);
+            this.panel5.TabIndex = 65;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -926,6 +1000,7 @@ namespace WindowsFormsApp3
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -939,6 +1014,7 @@ namespace WindowsFormsApp3
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1001,6 +1077,11 @@ namespace WindowsFormsApp3
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button blueColor_Button;
+        private System.Windows.Forms.Button pinkColor_Button;
+        private System.Windows.Forms.Button whiteColor_Button;
+        private System.Windows.Forms.Button darkColor_Button;
+        private System.Windows.Forms.Panel panel5;
     }
 }
 

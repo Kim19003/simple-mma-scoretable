@@ -74,6 +74,27 @@ namespace WindowsFormsApp3
             fighter2 = textBox4.Text;
         }
 
+        // Color buttons
+        private void blueColor_Button_Click(object sender, EventArgs e)
+        {
+            Color_Blue();
+        }
+
+        private void pinkColor_Button_Click(object sender, EventArgs e)
+        {
+            Color_Pink();
+        }
+
+        private void whiteColor_Button_Click(object sender, EventArgs e)
+        {
+            Color_White();
+        }
+
+        private void darkColor_Button_Click(object sender, EventArgs e)
+        {
+            Color_Dark();
+        }
+
         // -- Left side --
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -946,6 +967,150 @@ namespace WindowsFormsApp3
                 }
             }
         }
+
+        // Colors
+        private void Color_Blue()
+        {
+            this.BackColor = Color.FromArgb(46, 68, 107);
+
+            Label_Color_White();
+        }
+
+        private void Color_Pink()
+        {
+            this.BackColor = Color.FromArgb(156, 70, 70);
+
+            Label_Color_White();
+        }
+
+        private void Color_White()
+        {
+            this.BackColor = Color.White;
+
+            Label_Color_Black();
+        }
+
+        private void Color_Dark()
+        {
+            this.BackColor = Color.FromArgb(31, 33, 41);
+
+            Label_Color_White();
+        }
+
+        // Change label text color to black and box background colors to greyish (FOR BRIGHT THEMES)
+        private void Label_Color_Black()
+        {
+            label2.ForeColor = SystemColors.ControlText;
+            label19.ForeColor = SystemColors.ControlText;
+            label1.ForeColor = SystemColors.ControlText;
+            label3.ForeColor = SystemColors.ControlText;
+            label4.ForeColor = SystemColors.ControlText;
+            label10.ForeColor = SystemColors.ControlText;
+            label9.ForeColor = SystemColors.ControlText;
+            label8.ForeColor = SystemColors.ControlText;
+            label7.ForeColor = SystemColors.ControlText;
+            label6.ForeColor = SystemColors.ControlText;
+            label18.ForeColor = SystemColors.ControlText;
+            label17.ForeColor = SystemColors.ControlText;
+            label15.ForeColor = SystemColors.ControlText;
+            label14.ForeColor = SystemColors.ControlText;
+            label13.ForeColor = SystemColors.ControlText;
+            label12.ForeColor = SystemColors.ControlText;
+            label11.ForeColor = SystemColors.ControlText;
+            label5.ForeColor = SystemColors.ControlText;
+            label16.ForeColor = SystemColors.ControlText;
+
+            textBox1.BackColor = Color.Gainsboro;
+            panel1.BackColor = Color.Gainsboro;
+            textBox4.BackColor = Color.Gainsboro;
+            panel2.BackColor = Color.Gainsboro;
+
+            comboBox11.BackColor = Color.Gainsboro;
+
+            comboBox1.BackColor = Color.Gainsboro;
+            comboBox3.BackColor = Color.Gainsboro;
+            comboBox8.BackColor = Color.Gainsboro;
+            comboBox6.BackColor = Color.Gainsboro;
+            comboBox10.BackColor = Color.Gainsboro;
+
+            comboBox21.BackColor = Color.Gainsboro;
+            comboBox19.BackColor = Color.Gainsboro;
+            comboBox17.BackColor = Color.Gainsboro;
+            comboBox15.BackColor = Color.Gainsboro;
+            comboBox13.BackColor = Color.Gainsboro;
+
+            resetR1_Button.BackColor = Color.Gainsboro;
+            resetR2_Button.BackColor = Color.Gainsboro;
+            resetR3_Button.BackColor = Color.Gainsboro;
+            resetR4_Button.BackColor = Color.Gainsboro;
+            resetR5_Button.BackColor = Color.Gainsboro;
+
+            textBox2.BackColor = Color.Gainsboro;
+            panel3.BackColor = Color.Gainsboro;
+            textBox3.BackColor = Color.Gainsboro;
+            panel4.BackColor = Color.Gainsboro;
+
+            saveButton.BackColor = Color.Gainsboro;
+            clearButton.BackColor = Color.Gainsboro;
+        }
+
+        // Change label text color to white and box background colors to white (FOR DIM THEMES)
+        private void Label_Color_White()
+        {
+            label2.ForeColor = Color.White;
+            label19.ForeColor = Color.White;
+            label1.ForeColor = Color.White;
+            label3.ForeColor = Color.White;
+            label4.ForeColor = Color.White;
+            label10.ForeColor = Color.White;
+            label9.ForeColor = Color.White;
+            label8.ForeColor = Color.White;
+            label7.ForeColor = Color.White;
+            label6.ForeColor = Color.White;
+            label18.ForeColor = Color.White;
+            label17.ForeColor = Color.White;
+            label15.ForeColor = Color.White;
+            label14.ForeColor = Color.White;
+            label13.ForeColor = Color.White;
+            label12.ForeColor = Color.White;
+            label11.ForeColor = Color.White;
+            label5.ForeColor = Color.White;
+            label16.ForeColor = Color.White;
+
+            textBox1.BackColor = Color.White;
+            panel1.BackColor = Color.White;
+            textBox4.BackColor = Color.White;
+            panel2.BackColor = Color.White;
+
+            comboBox11.BackColor = Color.White;
+
+            comboBox1.BackColor = Color.White;
+            comboBox3.BackColor = Color.White;
+            comboBox8.BackColor = Color.White;
+            comboBox6.BackColor = Color.White;
+            comboBox10.BackColor = Color.White;
+
+            comboBox21.BackColor = Color.White;
+            comboBox19.BackColor = Color.White;
+            comboBox17.BackColor = Color.White;
+            comboBox15.BackColor = Color.White;
+            comboBox13.BackColor = Color.White;
+
+            resetR1_Button.BackColor = Color.White;
+            resetR2_Button.BackColor = Color.White;
+            resetR3_Button.BackColor = Color.White;
+            resetR4_Button.BackColor = Color.White;
+            resetR5_Button.BackColor = Color.White;
+
+            textBox2.BackColor = Color.White;
+            panel3.BackColor = Color.White;
+            textBox3.BackColor = Color.White;
+            panel4.BackColor = Color.White;
+
+            saveButton.BackColor = Color.White;
+            clearButton.BackColor = Color.White;
+        }
+        // ---
 
         private void Point_Box_Variables_Clear()
         {
