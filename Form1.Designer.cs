@@ -873,7 +873,7 @@ namespace WindowsFormsApp3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(68)))), ((int)(((byte)(106)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(107)))));
             this.ClientSize = new System.Drawing.Size(744, 612);
             this.Controls.Add(this.resetR5_Button);
             this.Controls.Add(this.resetR4_Button);

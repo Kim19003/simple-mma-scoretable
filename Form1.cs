@@ -9,17 +9,19 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp3
 {
     public partial class Form1 : Form
     {
+        const string appName = "Simple MMA Scoreboard";
+        const string appCreator = "Kim19003";
+
         public Form1()
         {
             InitializeComponent();
         }
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,62 +41,28 @@ namespace WindowsFormsApp3
             }
         }
 
-        bool box1_Set = false;
-        bool box2_Set = false;
-        bool box3_Set = false;
-        bool box4_Set = false;
-        bool box5_Set = false;
+        // Boxes set
+        bool box1_Set = false, box2_Set = false, box3_Set = false, box4_Set = false, box5_Set = false, r_box1_Set = false,
+        r_box2_Set = false, r_box3_Set = false, r_box4_Set = false, r_box5_Set = false;
 
-        bool r_box1_Set = false;
-        bool r_box2_Set = false;
-        bool r_box3_Set = false;
-        bool r_box4_Set = false;
-        bool r_box5_Set = false;
+        // Minux boxes set
+        bool minus_box1_Set = false, minus_box2_Set = false, minus_box3_Set = false, minus_box4_Set = false, minus_box5_Set = false,
+        r_minus_box1_Set = false, r_minus_box2_Set = false, r_minus_box3_Set = false, r_minus_box4_Set = false, r_minus_box5_Set = false;
 
-        bool minus_box1_Set = false;
-        bool minus_box2_Set = false;
-        bool minus_box3_Set = false;
-        bool minus_box4_Set = false;
-        bool minus_box5_Set = false;
+        // Counters
+        int count = 0, count2 = 0;
 
-        bool r_minus_box1_Set = false;
-        bool r_minus_box2_Set = false;
-        bool r_minus_box3_Set = false;
-        bool r_minus_box4_Set = false;
-        bool r_minus_box5_Set = false;
-
-        int count = 0;
-        int count2 = 0;
-
-        string fighter1;
-        string fighter2;
-
+        // Fighter names
+        string fighter1, fighter2;
+        
+        // Round amount
         int rounds_amount = 3;
 
-        int l_points1 = 0;
-        int l_points2 = 0;
-        int l_points3 = 0;
-        int l_points4 = 0;
-        int l_points5 = 0;
-        int l_cuts1 = 0;
-        int l_cuts2 = 0;
-        int l_cuts3 = 0;
-        int l_cuts4 = 0;
-        int l_cuts5 = 0;
-
-        int r_points1 = 0;
-        int r_points2 = 0;
-        int r_points3 = 0;
-        int r_points4 = 0;
-        int r_points5 = 0;
-        int r_cuts1 = 0;
-        int r_cuts2 = 0;
-        int r_cuts3 = 0;
-        int r_cuts4 = 0;
-        int r_cuts5 = 0;
-
-        int l_totalPoints = 0;
-        int r_totalPoints = 0;
+        // Points
+        int l_points1 = 0, l_points2 = 0, l_points3 = 0, l_points4 = 0, l_points5 = 0, l_cuts1 = 0, l_cuts2 = 0, l_cuts3 = 0,
+        l_cuts4 = 0, l_cuts5 = 0, r_points1 = 0, r_points2 = 0, r_points3 = 0, r_points4 = 0, r_points5 = 0, r_cuts1 = 0,
+        r_cuts2 = 0, r_cuts3 = 0, r_cuts4 = 0, r_cuts5 = 0, l_totalPoints = 0, r_totalPoints = 0;
+        // ---
 
         private void fighter1_TextChanged(object sender, EventArgs e)
         {
@@ -106,7 +74,7 @@ namespace WindowsFormsApp3
             fighter2 = textBox4.Text;
         }
 
-        // Left side
+        // -- Left side --
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text != null && comboBox1.Text != "")
@@ -192,97 +160,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        // Rounds selector
-        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox11.Text == "5")
-            {
-                rounds_amount = 5;
-
-                if (box4_Set == false)
-                    comboBox6.Enabled = true;
-                if (box5_Set == false)
-                    comboBox10.Enabled = true;
-                if (minus_box4_Set == false)
-                    comboBox5.Enabled = true;
-                if (minus_box5_Set == false)
-                    comboBox9.Enabled = true;
-                if (r_box5_Set == false)
-                    comboBox13.Enabled = true;
-                if (r_box4_Set == false)
-                    comboBox15.Enabled = true;
-                if (r_minus_box4_Set == false)
-                    comboBox14.Enabled = true;
-                if (r_minus_box5_Set == false)
-                    comboBox12.Enabled = true;
-
-                resetR4_Button.Enabled = true;
-                resetR5_Button.Enabled = true;
-            }
-            else
-            {
-                rounds_amount = 3;
-
-                int l_round4_value = l_points4 - l_cuts4;
-                int l_round5_value = l_points5 - l_cuts5;
-                int r_round4_value = r_points4 - r_cuts4;
-                int r_round5_value = r_points5 - r_cuts5;
-
-                comboBox6.Enabled = false;
-                comboBox10.Enabled = false;
-                comboBox5.Enabled = false;
-                comboBox9.Enabled = false;
-
-                comboBox6.Text = null;
-                comboBox10.Text = null;
-                comboBox5.Text = null;
-                comboBox9.Text = null;
-
-                comboBox13.Enabled = false;
-                comboBox15.Enabled = false;
-                comboBox14.Enabled = false;
-                comboBox12.Enabled = false;
-
-                comboBox13.Text = null;
-                comboBox15.Text = null;
-                comboBox14.Text = null;
-                comboBox12.Text = null;
-
-                box4_Set = false;
-                box5_Set = false;
-                r_box4_Set = false;
-                r_box5_Set = false;
-                minus_box4_Set = false;
-                minus_box5_Set = false;
-                r_minus_box4_Set = false;
-                r_minus_box5_Set = false;
-
-                l_points4 = 0;
-                l_points5 = 0;
-                l_cuts4 = 0;
-                l_cuts5 = 0;
-                r_points4 = 0;
-                r_points5 = 0;
-                r_cuts4 = 0;
-                r_cuts5 = 0;
-
-                resetR4_Button.Enabled = false;
-                resetR5_Button.Enabled = false;
-
-                if (count > 0)
-                {
-                    count -= l_round4_value + l_round5_value;
-                    textBox2.Text = Convert.ToString(count);
-                }
-                if (count2 > 0)
-                {
-                    count2 -= r_round4_value + r_round5_value;
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
-        }
-
-        // Left minus points
+        // - Left minus -
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox2.Text != null && comboBox2.Text != "")
@@ -368,7 +246,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        // Right side
+        // -- Right side --
         private void comboBox21_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox21.Text != null && comboBox21.Text != "")
@@ -454,7 +332,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        // Right minus points
+        // - Right minus -
         private void comboBox20_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox20.Text != null && comboBox20.Text != "")
@@ -540,9 +418,96 @@ namespace WindowsFormsApp3
             }
         }
 
+        // Rounds selector
+        private void comboBox11_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox11.Text == "5")
+            {
+                rounds_amount = 5;
+
+                if (box4_Set == false)
+                    comboBox6.Enabled = true;
+                if (box5_Set == false)
+                    comboBox10.Enabled = true;
+                if (minus_box4_Set == false)
+                    comboBox5.Enabled = true;
+                if (minus_box5_Set == false)
+                    comboBox9.Enabled = true;
+                if (r_box5_Set == false)
+                    comboBox13.Enabled = true;
+                if (r_box4_Set == false)
+                    comboBox15.Enabled = true;
+                if (r_minus_box4_Set == false)
+                    comboBox14.Enabled = true;
+                if (r_minus_box5_Set == false)
+                    comboBox12.Enabled = true;
+
+                resetR4_Button.Enabled = true;
+                resetR5_Button.Enabled = true;
+            }
+            else
+            {
+                rounds_amount = 3;
+
+                int l_round4_value = l_points4 - l_cuts4, l_round5_value = l_points5 - l_cuts5,
+                r_round4_value = r_points4 - r_cuts4, r_round5_value = r_points5 - r_cuts5;
+
+                comboBox6.Enabled = false;
+                comboBox10.Enabled = false;
+                comboBox5.Enabled = false;
+                comboBox9.Enabled = false;
+                comboBox6.Text = null;
+                comboBox10.Text = null;
+                comboBox5.Text = null;
+                comboBox9.Text = null;
+
+                comboBox13.Enabled = false;
+                comboBox15.Enabled = false;
+                comboBox14.Enabled = false;
+                comboBox12.Enabled = false;
+                comboBox13.Text = null;
+                comboBox15.Text = null;
+                comboBox14.Text = null;
+                comboBox12.Text = null;
+
+                box4_Set = false;
+                box5_Set = false;
+                r_box4_Set = false;
+                r_box5_Set = false;
+                minus_box4_Set = false;
+                minus_box5_Set = false;
+                r_minus_box4_Set = false;
+                r_minus_box5_Set = false;
+
+                l_points4 = 0;
+                l_points5 = 0;
+                l_cuts4 = 0;
+                l_cuts5 = 0;
+                r_points4 = 0;
+                r_points5 = 0;
+                r_cuts4 = 0;
+                r_cuts5 = 0;
+
+                resetR4_Button.Enabled = false;
+                resetR5_Button.Enabled = false;
+
+                if (count > 0)
+                {
+                    count -= l_round4_value + l_round5_value;
+                    textBox2.Text = Convert.ToString(count);
+                }
+                if (count2 > 0)
+                {
+                    count2 -= r_round4_value + r_round5_value;
+                    textBox3.Text = Convert.ToString(count2);
+                }
+            }
+        }
+
+        // Clear-button
         private void clearButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to reset the scoreboard values?", "Reset all values?", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Are you sure that you want to reset the scoreboard?", appName, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
             if (result == DialogResult.Yes)
             {
@@ -554,9 +519,10 @@ namespace WindowsFormsApp3
             }
         }
 
+        // Save-button
         private void saveButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Do you want to save the scoreboard?", "Save the scoreboard?", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Do you want to save the scoreboard?", appName, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -567,251 +533,7 @@ namespace WindowsFormsApp3
                 // Do nothing
             }
         }
-
-        public void Save()
-        {
-            DateTime DateNow = DateTime.Now;
-            string dateNow = Convert.ToString(DateNow);
-
-            SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.FileName = "My Scoreboard.txt";
-            fileDialog.Filter = "Text files (*.txt)|*.txt";
-            fileDialog.RestoreDirectory = true;
-
-            string directoryPath; // Directory path
-
-            if (textBox2.Text != null && textBox2.Text != "")
-                l_totalPoints = Convert.ToInt32(textBox2.Text); // Left total points
-            if (textBox3.Text != null && textBox3.Text != "")
-                r_totalPoints = Convert.ToInt32(textBox3.Text); // Right total points
-
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                directoryPath = fileDialog.InitialDirectory + fileDialog.FileName;
-
-                if (!File.Exists(fileDialog.FileName)) // If file doesn't exist
-                {
-                    File.Create(fileDialog.FileName).Close();
-
-                    using (StreamWriter sw = File.AppendText(fileDialog.FileName))
-                    {
-                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-
-                        sw.WriteLine("Rounds amount: " + rounds_amount);
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
-                        sw.WriteLine("Round 2 points: " + l_points2 + " (" + l_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
-                        sw.WriteLine("Round 3 points: " + l_points3 + " (" + l_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
-                        if (rounds_amount == 5)
-                        {
-                            sw.WriteLine("Round 4 points: " + l_points4 + " (" + l_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
-                            sw.WriteLine("Round 5 points: " + l_points5 + " (" + l_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
-                        }
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Total points: " + l_totalPoints); // Total points: 30
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-
-                        sw.WriteLine("Fighter 2: " + fighter2); // Fighter 2: Dustin Poirier
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Round 1 points: " + r_points1 + " (" + r_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
-                        sw.WriteLine("Round 2 points: " + r_points2 + " (" + r_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
-                        sw.WriteLine("Round 3 points: " + r_points3 + " (" + r_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
-                        if (rounds_amount == 5)
-                        {
-                            sw.WriteLine("Round 4 points: " + r_points4 + " (" + r_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
-                            sw.WriteLine("Round 5 points: " + r_points5 + " (" + r_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
-                        }
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Total points: " + r_totalPoints); // Total points: 30
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-                    }
-                }
-                else // If file already exists
-                {
-                    File.WriteAllText(@directoryPath, string.Empty); // Overwrite the old file
-
-                    using (StreamWriter sw = File.AppendText(fileDialog.FileName))
-                    {
-                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-
-                        sw.WriteLine("Rounds amount: " + rounds_amount);
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-
-                        sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
-                        sw.WriteLine("Round 2 points: " + l_points2 + " (" + l_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
-                        sw.WriteLine("Round 3 points: " + l_points3 + " (" + l_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
-                        if (rounds_amount == 5)
-                        {
-                            sw.WriteLine("Round 4 points: " + l_points4 + " (" + l_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
-                            sw.WriteLine("Round 5 points: " + l_points5 + " (" + l_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
-                        }
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Total points: " + l_totalPoints); // Total points: 30
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-
-                        sw.WriteLine("Fighter 2: " + fighter2); // Fighter 2: Dustin Poirier
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Round 1 points: " + r_points1 + " (" + r_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
-                        sw.WriteLine("Round 2 points: " + r_points2 + " (" + r_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
-                        sw.WriteLine("Round 3 points: " + r_points3 + " (" + r_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
-                        if (rounds_amount == 5)
-                        {
-                            sw.WriteLine("Round 4 points: " + r_points4 + " (" + r_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
-                            sw.WriteLine("Round 5 points: " + r_points5 + " (" + r_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
-                        }
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Total points: " + r_totalPoints); // Total points: 30
-                        sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("---");
-                        sw.WriteLine(""); // < Line feed >
-                    }
-                }
-            }
-        }
-
-        public void Clear()
-        {
-            // Clear only box
-        }
-
-        public void Clear_All()
-        {
-            box1_Set = false;
-            box2_Set = false;
-            box3_Set = false;
-            box4_Set = false;
-            box5_Set = false;
-
-            r_box1_Set = false;
-            r_box2_Set = false;
-            r_box3_Set = false;
-            r_box4_Set = false;
-            r_box5_Set = false;
-
-            minus_box1_Set = false;
-            minus_box2_Set = false;
-            minus_box3_Set = false;
-            minus_box4_Set = false;
-            minus_box5_Set = false;
-
-            r_minus_box1_Set = false;
-            r_minus_box2_Set = false;
-            r_minus_box3_Set = false;
-            r_minus_box4_Set = false;
-            r_minus_box5_Set = false;
-
-            count = 0;
-            count2 = 0;
-
-            // Fighter name & total points
-            textBox1.Text = null;
-            textBox4.Text = null;
-            textBox2.Text = null;
-            textBox3.Text = null;
-
-            // Points & minus points
-            comboBox1.Text = null;
-            comboBox2.Text = null;
-            comboBox3.Text = null;
-            comboBox4.Text = null;
-            comboBox5.Text = null;
-            comboBox6.Text = null;
-            comboBox7.Text = null;
-            comboBox8.Text = null;
-            comboBox9.Text = null;
-            comboBox10.Text = null;
-            comboBox12.Text = null;
-            comboBox13.Text = null;
-            comboBox14.Text = null;
-            comboBox15.Text = null;
-            comboBox16.Text = null;
-            comboBox17.Text = null;
-            comboBox18.Text = null;
-            comboBox19.Text = null;
-            comboBox20.Text = null;
-            comboBox21.Text = null;
-
-            // Rounds selector
-            comboBox11.Text = "3";
-
-            // Re-disable round 4-5 boxes
-            comboBox6.Enabled = false;
-            comboBox10.Enabled = false;
-            comboBox5.Enabled = false;
-            comboBox9.Enabled = false;
-            comboBox13.Enabled = false;
-            comboBox15.Enabled = false;
-            comboBox14.Enabled = false;
-            comboBox12.Enabled = false;
-
-            resetR4_Button.Enabled = false;
-            resetR5_Button.Enabled = false;
-
-            // Re-enable round 1-3 boxes
-            // Left points
-            comboBox1.Enabled = true;
-            comboBox3.Enabled = true;
-            comboBox8.Enabled = true;
-            // Left cuts
-            comboBox2.Enabled = true;
-            comboBox4.Enabled = true;
-            comboBox7.Enabled = true;
-            // Right points
-            comboBox21.Enabled = true;
-            comboBox19.Enabled = true;
-            comboBox17.Enabled = true;
-            // Right cuts
-            comboBox20.Enabled = true;
-            comboBox18.Enabled = true;
-            comboBox16.Enabled = true;
-
-            // Save values
-            rounds_amount = 3;
-            l_points1 = 0;
-            l_points2 = 0;
-            l_points3 = 0;
-            l_points4 = 0;
-            l_points5 = 0;
-            l_cuts1 = 0;
-            l_cuts2 = 0;
-            l_cuts3 = 0;
-            l_cuts4 = 0;
-            l_cuts5 = 0;
-            r_points1 = 0;
-            r_points2 = 0;
-            r_points3 = 0;
-            r_points4 = 0;
-            r_points5 = 0;
-            r_cuts1 = 0;
-            r_cuts2 = 0;
-            r_cuts3 = 0;
-            r_cuts4 = 0;
-            r_cuts5 = 0;
-            fighter1 = null;
-            fighter2 = null;
-            l_totalPoints = 0;
-            r_totalPoints = 0;
-        }
+        // ---
 
         private void resetR1_Button_Click(object sender, EventArgs e)
         {
@@ -1068,7 +790,7 @@ namespace WindowsFormsApp3
             }
         }
 
-        // Gray text for hidden boxes (thanks Aland Li!)
+        // Gray text for hidden boxes
         private void Round4_EC(object sender, EventArgs e)
         {
             var btn = (Button)sender;
@@ -1085,6 +807,7 @@ namespace WindowsFormsApp3
             drawBrush.Dispose();
             sf.Dispose();
         }
+        // ---
 
         private void Round5_EC(object sender, EventArgs e)
         {
@@ -1103,53 +826,266 @@ namespace WindowsFormsApp3
             sf.Dispose();
         }
 
-        // Gradient color background
-        /*
-        protected override void OnPaintBackground(PaintEventArgs e)
+        private void Save()
         {
-            using (LinearGradientBrush brush = new LinearGradientBrush(this.ClientRectangle, ColorTranslator.FromHtml("#273859"), ColorTranslator.FromHtml("#273859"), 90F))
+            DateTime DateNow = DateTime.Now;
+            string dateNow = Convert.ToString(DateNow);
+
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.FileName = "My MMA Scoreboard.txt";
+            fileDialog.Filter = "Text files (*.txt)|*.txt";
+            fileDialog.RestoreDirectory = true;
+
+            string directoryPath; // Directory path
+
+            if (textBox2.Text != null && textBox2.Text != "")
+                l_totalPoints = Convert.ToInt32(textBox2.Text); // Left total points
+            if (textBox3.Text != null && textBox3.Text != "")
+                r_totalPoints = Convert.ToInt32(textBox3.Text); // Right total points
+
+            if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+                directoryPath = fileDialog.InitialDirectory + fileDialog.FileName;
+
+                if (!File.Exists(fileDialog.FileName)) // If file doesn't exist
+                {
+                    File.Create(fileDialog.FileName).Close();
+
+                    using (StreamWriter sw = File.AppendText(fileDialog.FileName))
+                    {
+                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+
+                        sw.WriteLine("Rounds amount: " + rounds_amount);
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
+                        sw.WriteLine("Round 2 points: " + l_points2 + " (" + l_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
+                        sw.WriteLine("Round 3 points: " + l_points3 + " (" + l_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
+                        if (rounds_amount == 5)
+                        {
+                            sw.WriteLine("Round 4 points: " + l_points4 + " (" + l_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
+                            sw.WriteLine("Round 5 points: " + l_points5 + " (" + l_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
+                        }
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Total points: " + l_totalPoints); // Total points: 30
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+
+                        sw.WriteLine("Fighter 2: " + fighter2); // Fighter 2: Dustin Poirier
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Round 1 points: " + r_points1 + " (" + r_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
+                        sw.WriteLine("Round 2 points: " + r_points2 + " (" + r_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
+                        sw.WriteLine("Round 3 points: " + r_points3 + " (" + r_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
+                        if (rounds_amount == 5)
+                        {
+                            sw.WriteLine("Round 4 points: " + r_points4 + " (" + r_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
+                            sw.WriteLine("Round 5 points: " + r_points5 + " (" + r_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
+                        }
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Total points: " + r_totalPoints); // Total points: 30
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+                    }
+                }
+                else // If file already exists
+                {
+                    File.WriteAllText(@directoryPath, string.Empty); // Overwrite the old file
+
+                    using (StreamWriter sw = File.AppendText(fileDialog.FileName))
+                    {
+                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+
+                        sw.WriteLine("Rounds amount: " + rounds_amount);
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+
+                        sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
+                        sw.WriteLine("Round 2 points: " + l_points2 + " (" + l_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
+                        sw.WriteLine("Round 3 points: " + l_points3 + " (" + l_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
+                        if (rounds_amount == 5)
+                        {
+                            sw.WriteLine("Round 4 points: " + l_points4 + " (" + l_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
+                            sw.WriteLine("Round 5 points: " + l_points5 + " (" + l_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
+                        }
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Total points: " + l_totalPoints); // Total points: 30
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+
+                        sw.WriteLine("Fighter 2: " + fighter2); // Fighter 2: Dustin Poirier
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Round 1 points: " + r_points1 + " (" + r_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
+                        sw.WriteLine("Round 2 points: " + r_points2 + " (" + r_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
+                        sw.WriteLine("Round 3 points: " + r_points3 + " (" + r_cuts3 + " cuts)"); // Round 3 points: 10 (0 cuts)
+                        if (rounds_amount == 5)
+                        {
+                            sw.WriteLine("Round 4 points: " + r_points4 + " (" + r_cuts4 + " cuts)"); // Round 4 points: 10 (0 cuts)
+                            sw.WriteLine("Round 5 points: " + r_points5 + " (" + r_cuts5 + " cuts)"); // Round 5 points: 10 (0 cuts)
+                        }
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("Total points: " + r_totalPoints); // Total points: 30
+                        sw.WriteLine(""); // < Line feed >
+                        sw.WriteLine("---");
+                        sw.WriteLine(""); // < Line feed >
+                    }
+                }
             }
         }
-        */
 
-        // Color comboBox items
-        /*
-            var combo = sender as ComboBox;
-
-            if ((e.State & DrawItemState.Selected) == DrawItemState.Selected)
-            {
-                e.Graphics.FillRectangle(new SolidBrush(Color.SteelBlue), e.Bounds);
-            }
-            else
-            {
-                e.Graphics.FillRectangle(new SolidBrush(Color.LightCoral), e.Bounds);
-            }
-
-            e.Graphics.DrawString(combo.Items[e.Index].ToString(), e.Font, new SolidBrush(Color.Black), new Point(e.Bounds.X, e.Bounds.Y));
-        */
-
-        // Round borders (thanks Custom UI!)
-        /*
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-        );
-
-        public Form1()
+        private void Point_Box_Variables_Clear()
         {
-            InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            box1_Set = false;
+            box2_Set = false;
+            box3_Set = false;
+            box4_Set = false;
+            box5_Set = false;
 
+            r_box1_Set = false;
+            r_box2_Set = false;
+            r_box3_Set = false;
+            r_box4_Set = false;
+            r_box5_Set = false;
         }
-        */
+
+        private void Minus_Point_Box_Variables_Clear()
+        {
+            minus_box1_Set = false;
+            minus_box2_Set = false;
+            minus_box3_Set = false;
+            minus_box4_Set = false;
+            minus_box5_Set = false;
+
+            r_minus_box1_Set = false;
+            r_minus_box2_Set = false;
+            r_minus_box3_Set = false;
+            r_minus_box4_Set = false;
+            r_minus_box5_Set = false;
+        }
+
+        private void Counter_Variables_Clear()
+        {
+            count = 0;
+            count2 = 0;
+        }
+
+        private void Text_Boxes_Clear()
+        {
+            // Fighters and total points
+            textBox1.Text = null;
+            textBox4.Text = null;
+            textBox2.Text = null;
+            textBox3.Text = null;
+
+            // Points
+            comboBox1.Text = null;
+            comboBox2.Text = null;
+            comboBox3.Text = null;
+            comboBox4.Text = null;
+            comboBox5.Text = null;
+            comboBox6.Text = null;
+            comboBox7.Text = null;
+            comboBox8.Text = null;
+            comboBox9.Text = null;
+            comboBox10.Text = null;
+            comboBox12.Text = null;
+            comboBox13.Text = null;
+            comboBox14.Text = null;
+            comboBox15.Text = null;
+            comboBox16.Text = null;
+            comboBox17.Text = null;
+            comboBox18.Text = null;
+            comboBox19.Text = null;
+            comboBox20.Text = null;
+            comboBox21.Text = null;
+        }
+
+        private void Box_Visibility_Clear()
+        {
+            // Re-disable round 4-5 stuff
+            comboBox6.Enabled = false;
+            comboBox10.Enabled = false;
+            comboBox5.Enabled = false;
+            comboBox9.Enabled = false;
+            comboBox13.Enabled = false;
+            comboBox15.Enabled = false;
+            comboBox14.Enabled = false;
+            comboBox12.Enabled = false;
+
+            resetR4_Button.Enabled = false;
+            resetR5_Button.Enabled = false;
+
+            // Re-enable round 1-3 stuff
+            comboBox1.Enabled = true;
+            comboBox3.Enabled = true;
+            comboBox8.Enabled = true;
+            comboBox2.Enabled = true;
+            comboBox4.Enabled = true;
+            comboBox7.Enabled = true;
+
+            comboBox21.Enabled = true;
+            comboBox19.Enabled = true;
+            comboBox17.Enabled = true;
+            comboBox20.Enabled = true;
+            comboBox18.Enabled = true;
+            comboBox16.Enabled = true;
+        }
+
+        private void Other_Variables_Clear()
+        {
+            l_points1 = 0;
+            l_points2 = 0;
+            l_points3 = 0;
+            l_points4 = 0;
+            l_points5 = 0;
+            l_cuts1 = 0;
+            l_cuts2 = 0;
+            l_cuts3 = 0;
+            l_cuts4 = 0;
+            l_cuts5 = 0;
+            r_points1 = 0;
+            r_points2 = 0;
+            r_points3 = 0;
+            r_points4 = 0;
+            r_points5 = 0;
+            r_cuts1 = 0;
+            r_cuts2 = 0;
+            r_cuts3 = 0;
+            r_cuts4 = 0;
+            r_cuts5 = 0;
+            fighter1 = null;
+            fighter2 = null;
+            l_totalPoints = 0;
+            r_totalPoints = 0;
+        }
+
+        private void Clear_All()
+        {
+            // Rounds selector
+            comboBox11.Text = "3";
+            rounds_amount = 3;
+
+            // Others
+            Point_Box_Variables_Clear();
+            Minus_Point_Box_Variables_Clear();
+            Counter_Variables_Clear();
+            Text_Boxes_Clear();
+            Box_Visibility_Clear();
+            Other_Variables_Clear();
+        }
     }
 }
