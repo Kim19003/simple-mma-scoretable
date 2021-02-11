@@ -444,84 +444,11 @@ namespace SimpleMMAScoreboard
         {
             if (comboBox11.Text == "5")
             {
-                rounds_amount = 5;
-
-                if (box4_Set == false)
-                    comboBox6.Enabled = true;
-                if (box5_Set == false)
-                    comboBox10.Enabled = true;
-                if (minus_box4_Set == false)
-                    comboBox5.Enabled = true;
-                if (minus_box5_Set == false)
-                    comboBox9.Enabled = true;
-                if (r_box5_Set == false)
-                    comboBox13.Enabled = true;
-                if (r_box4_Set == false)
-                    comboBox15.Enabled = true;
-                if (r_minus_box4_Set == false)
-                    comboBox14.Enabled = true;
-                if (r_minus_box5_Set == false)
-                    comboBox12.Enabled = true;
-
-                resetR4_Button.Enabled = true;
-                resetR5_Button.Enabled = true;
+                Round_Amount_5();
             }
             else
             {
-                rounds_amount = 3;
-
-                int l_round4_value = l_points4 - l_cuts4, l_round5_value = l_points5 - l_cuts5,
-                r_round4_value = r_points4 - r_cuts4, r_round5_value = r_points5 - r_cuts5;
-
-                comboBox6.Enabled = false;
-                comboBox10.Enabled = false;
-                comboBox5.Enabled = false;
-                comboBox9.Enabled = false;
-                comboBox6.Text = null;
-                comboBox10.Text = null;
-                comboBox5.Text = null;
-                comboBox9.Text = null;
-
-                comboBox13.Enabled = false;
-                comboBox15.Enabled = false;
-                comboBox14.Enabled = false;
-                comboBox12.Enabled = false;
-                comboBox13.Text = null;
-                comboBox15.Text = null;
-                comboBox14.Text = null;
-                comboBox12.Text = null;
-
-                box4_Set = false;
-                box5_Set = false;
-                r_box4_Set = false;
-                r_box5_Set = false;
-                minus_box4_Set = false;
-                minus_box5_Set = false;
-                r_minus_box4_Set = false;
-                r_minus_box5_Set = false;
-
-                l_points4 = 0;
-                l_points5 = 0;
-                l_cuts4 = 0;
-                l_cuts5 = 0;
-                r_points4 = 0;
-                r_points5 = 0;
-                r_cuts4 = 0;
-                r_cuts5 = 0;
-
-                resetR4_Button.Enabled = false;
-                resetR5_Button.Enabled = false;
-
-                if (count > 0)
-                {
-                    count -= l_round4_value + l_round5_value;
-                    textBox2.Text = Convert.ToString(count);
-                }
-                if (count2 > 0)
-                {
-                    count2 -= r_round4_value + r_round5_value;
-                    textBox3.Text = Convert.ToString(count2);
-                }
+                Round_Amount_3();
             }
         }
 
@@ -1133,6 +1060,89 @@ namespace SimpleMMAScoreboard
             }
             else
             {
+                textBox3.Text = Convert.ToString(count2);
+            }
+        }
+
+        void Round_Amount_5()
+        {
+            rounds_amount = 5;
+
+            if (box4_Set == false)
+                comboBox6.Enabled = true;
+            if (box5_Set == false)
+                comboBox10.Enabled = true;
+            if (minus_box4_Set == false)
+                comboBox5.Enabled = true;
+            if (minus_box5_Set == false)
+                comboBox9.Enabled = true;
+            if (r_box5_Set == false)
+                comboBox13.Enabled = true;
+            if (r_box4_Set == false)
+                comboBox15.Enabled = true;
+            if (r_minus_box4_Set == false)
+                comboBox14.Enabled = true;
+            if (r_minus_box5_Set == false)
+                comboBox12.Enabled = true;
+
+            resetR4_Button.Enabled = true;
+            resetR5_Button.Enabled = true;
+        }
+
+        void Round_Amount_3()
+        {
+            rounds_amount = 3;
+
+            int l_round4_value = l_points4 - l_cuts4, l_round5_value = l_points5 - l_cuts5,
+            r_round4_value = r_points4 - r_cuts4, r_round5_value = r_points5 - r_cuts5;
+
+            comboBox6.Enabled = false;
+            comboBox10.Enabled = false;
+            comboBox5.Enabled = false;
+            comboBox9.Enabled = false;
+            comboBox6.Text = null;
+            comboBox10.Text = null;
+            comboBox5.Text = null;
+            comboBox9.Text = null;
+
+            comboBox13.Enabled = false;
+            comboBox15.Enabled = false;
+            comboBox14.Enabled = false;
+            comboBox12.Enabled = false;
+            comboBox13.Text = null;
+            comboBox15.Text = null;
+            comboBox14.Text = null;
+            comboBox12.Text = null;
+
+            box4_Set = false;
+            box5_Set = false;
+            r_box4_Set = false;
+            r_box5_Set = false;
+            minus_box4_Set = false;
+            minus_box5_Set = false;
+            r_minus_box4_Set = false;
+            r_minus_box5_Set = false;
+
+            l_points4 = 0;
+            l_points5 = 0;
+            l_cuts4 = 0;
+            l_cuts5 = 0;
+            r_points4 = 0;
+            r_points5 = 0;
+            r_cuts4 = 0;
+            r_cuts5 = 0;
+
+            resetR4_Button.Enabled = false;
+            resetR5_Button.Enabled = false;
+
+            if (count > 0)
+            {
+                count -= l_round4_value + l_round5_value;
+                textBox2.Text = Convert.ToString(count);
+            }
+            if (count2 > 0)
+            {
+                count2 -= r_round4_value + r_round5_value;
                 textBox3.Text = Convert.ToString(count2);
             }
         }
