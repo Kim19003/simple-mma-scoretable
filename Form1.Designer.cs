@@ -1,5 +1,5 @@
 ﻿
-namespace WindowsFormsApp3
+namespace SimpleMMAScoreboard
 {
     partial class Form1
     {
