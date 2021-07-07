@@ -639,7 +639,14 @@ namespace SimpleMMAScoreboard
             string dateNow = Convert.ToString(DateNow);
 
             SaveFileDialog fileDialog = new SaveFileDialog();
-            fileDialog.FileName = "My MMA Scoreboard.txt";
+            if (!string.IsNullOrEmpty(fighter1) && !string.IsNullOrEmpty(fighter2))
+            {
+                fileDialog.FileName = $"{fighter1} vs. {fighter2} ({DateNow.ToString("dd/MM/yyyy")})";
+            }
+            else
+            {
+                fileDialog.FileName = $"unnamed vs. unnamed ({DateNow.ToString("dd/MM/yyyy")})";
+            }
             fileDialog.Filter = "Text files (*.txt)|*.txt";
             fileDialog.RestoreDirectory = true;
 

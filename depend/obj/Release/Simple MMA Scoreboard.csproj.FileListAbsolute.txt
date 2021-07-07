@@ -1,0 +1,10 @@
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\Simple MMA Scoreboard.csprojAssemblyReference.cache
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\SimpleMMAScoreboard.Form1.resources
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\Simple MMA Scoreboard.csproj.GenerateResource.cache
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\bin\Release\Simple MMA Scoreboard.exe.config
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\bin\Release\Simple MMA Scoreboard.exe
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\bin\Release\Simple MMA Scoreboard.pdb
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\SimpleMMAScoreboard.Properties.Resources.resources
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\Simple MMA Scoreboard.csproj.CoreCompileInputs.cache
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\Simple MMA Scoreboard.exe
+D:\stuff\- GITHUB -\simple-mma-scoretable\depend\obj\Release\Simple MMA Scoreboard.pdb
