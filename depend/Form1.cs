@@ -25,8 +25,8 @@ namespace SimpleMMAScoreboard
         // Counters
         int count = 0, count2 = 0;
 
-        // Fighter names
-        string fighter1, fighter2;
+        // Fighter and judge names
+        string fighter1, fighter2, judge;
 
         // Round amount
         int rounds_amount = 3;
@@ -73,7 +73,12 @@ namespace SimpleMMAScoreboard
         }
         #endregion
 
-        #region FighterBoxes
+        #region FighterAndJudgeBoxes
+        /*
+         * fighter1 = Red Corner
+         * fighter2 = Blue Corner
+         */
+
         private void fighter1_TextChanged(object sender, EventArgs e)
         {
             fighter1 = textBox1.Text;
@@ -82,6 +87,11 @@ namespace SimpleMMAScoreboard
         private void fighter2_TextChanged(object sender, EventArgs e)
         {
             fighter2 = textBox4.Text;
+        }
+
+        private void judgeBox_TextChanged(object sender, EventArgs e)
+        {
+            judge = judgeBox.Text;
         }
         #endregion
 
@@ -667,7 +677,7 @@ namespace SimpleMMAScoreboard
 
                     using (StreamWriter sw = File.AppendText(fileDialog.FileName))
                     {
-                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
+                        sw.WriteLine("[ DATE: " + dateNow + " ]"); // [ DATE: 1.1.2020 18.00.00 ]
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
@@ -676,7 +686,7 @@ namespace SimpleMMAScoreboard
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
-                        sw.WriteLine("Fighter 1: " + fighter1); // Fighter 1: Conor McGregor
+                        sw.WriteLine("Red Corner: " + fighter1); // Red Corner: Conor McGregor
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("Round 1 points: " + l_points1 + " (" + l_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
                         sw.WriteLine("Round 2 points: " + l_points2 + " (" + l_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
@@ -692,7 +702,7 @@ namespace SimpleMMAScoreboard
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
 
-                        sw.WriteLine("Fighter 2: " + fighter2); // Fighter 2: Dustin Poirier
+                        sw.WriteLine("Blue Corner: " + fighter2); // Blue Corner: Dustin Poirier
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("Round 1 points: " + r_points1 + " (" + r_cuts1 + " cuts)"); // Round 1 points: 10 (0 cuts)
                         sw.WriteLine("Round 2 points: " + r_points2 + " (" + r_cuts2 + " cuts)"); // Round 2 points: 10 (0 cuts)
@@ -707,6 +717,14 @@ namespace SimpleMMAScoreboard
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
+                        if (!string.IsNullOrEmpty(judge))
+                        {
+                            sw.WriteLine("Judge: " + judge);
+                        }
+                        else
+                        {
+                            sw.WriteLine("Judge: ");
+                        }
                     }
                 }
                 else // If file already exists

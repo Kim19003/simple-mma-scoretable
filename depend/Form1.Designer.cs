@@ -90,16 +90,21 @@ namespace SimpleMMAScoreboard
             this.whiteColor_Button = new System.Windows.Forms.Button();
             this.darkColor_Button = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.judgeBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBox1
             // 
             this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -112,6 +117,7 @@ namespace SimpleMMAScoreboard
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(85, 37);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.TabStop = false;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // comboBox2
@@ -145,6 +151,7 @@ namespace SimpleMMAScoreboard
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(85, 37);
             this.comboBox3.TabIndex = 2;
+            this.comboBox3.TabStop = false;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox4
@@ -194,6 +201,7 @@ namespace SimpleMMAScoreboard
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(85, 37);
             this.comboBox6.TabIndex = 4;
+            this.comboBox6.TabStop = false;
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
             // comboBox7
@@ -227,6 +235,7 @@ namespace SimpleMMAScoreboard
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(85, 37);
             this.comboBox8.TabIndex = 3;
+            this.comboBox8.TabStop = false;
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
             // 
             // comboBox9
@@ -260,6 +269,7 @@ namespace SimpleMMAScoreboard
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(85, 37);
             this.comboBox10.TabIndex = 5;
+            this.comboBox10.TabStop = false;
             this.comboBox10.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
             // 
             // textBox1
@@ -328,9 +338,9 @@ namespace SimpleMMAScoreboard
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(53, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(106, 20);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Fighter 1:";
+            this.label2.Text = "Red Corner:";
             // 
             // label3
             // 
@@ -364,9 +374,9 @@ namespace SimpleMMAScoreboard
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(50, 411);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 20);
+            this.label5.Size = new System.Drawing.Size(109, 20);
             this.label5.TabIndex = 17;
-            this.label5.Text = "Total points:";
+            this.label5.Text = "Total Points:";
             // 
             // label11
             // 
@@ -436,9 +446,9 @@ namespace SimpleMMAScoreboard
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(361, 411);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 20);
+            this.label16.Size = new System.Drawing.Size(109, 20);
             this.label16.TabIndex = 38;
-            this.label16.Text = "Total points:";
+            this.label16.Text = "Total Points:";
             // 
             // label17
             // 
@@ -472,9 +482,9 @@ namespace SimpleMMAScoreboard
             this.label19.ForeColor = System.Drawing.Color.White;
             this.label19.Location = new System.Drawing.Point(364, 47);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(86, 20);
+            this.label19.Size = new System.Drawing.Size(109, 20);
             this.label19.TabIndex = 35;
-            this.label19.Text = "Fighter 2:";
+            this.label19.Text = "Blue Corner:";
             // 
             // textBox3
             // 
@@ -536,6 +546,7 @@ namespace SimpleMMAScoreboard
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(85, 37);
             this.comboBox13.TabIndex = 30;
+            this.comboBox13.TabStop = false;
             this.comboBox13.SelectedIndexChanged += new System.EventHandler(this.comboBox13_SelectedIndexChanged);
             // 
             // comboBox14
@@ -569,6 +580,7 @@ namespace SimpleMMAScoreboard
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(85, 37);
             this.comboBox15.TabIndex = 29;
+            this.comboBox15.TabStop = false;
             this.comboBox15.SelectedIndexChanged += new System.EventHandler(this.comboBox15_SelectedIndexChanged);
             // 
             // comboBox16
@@ -602,6 +614,7 @@ namespace SimpleMMAScoreboard
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(85, 37);
             this.comboBox17.TabIndex = 28;
+            this.comboBox17.TabStop = false;
             this.comboBox17.SelectedIndexChanged += new System.EventHandler(this.comboBox17_SelectedIndexChanged);
             // 
             // comboBox18
@@ -635,6 +648,7 @@ namespace SimpleMMAScoreboard
             this.comboBox19.Name = "comboBox19";
             this.comboBox19.Size = new System.Drawing.Size(85, 37);
             this.comboBox19.TabIndex = 26;
+            this.comboBox19.TabStop = false;
             this.comboBox19.SelectedIndexChanged += new System.EventHandler(this.comboBox19_SelectedIndexChanged);
             // 
             // comboBox20
@@ -668,6 +682,7 @@ namespace SimpleMMAScoreboard
             this.comboBox21.Name = "comboBox21";
             this.comboBox21.Size = new System.Drawing.Size(85, 37);
             this.comboBox21.TabIndex = 25;
+            this.comboBox21.TabStop = false;
             this.comboBox21.SelectedIndexChanged += new System.EventHandler(this.comboBox21_SelectedIndexChanged);
             // 
             // label6
@@ -733,14 +748,15 @@ namespace SimpleMMAScoreboard
             // clearButton
             // 
             this.clearButton.BackColor = System.Drawing.Color.White;
-            this.clearButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.clearButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.clearButton.FlatAppearance.BorderSize = 0;
             this.clearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearButton.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearButton.Location = new System.Drawing.Point(300, 512);
+            this.clearButton.Location = new System.Drawing.Point(304, 590);
             this.clearButton.Name = "clearButton";
             this.clearButton.Size = new System.Drawing.Size(112, 37);
             this.clearButton.TabIndex = 50;
+            this.clearButton.TabStop = false;
             this.clearButton.Text = "Reset";
             this.clearButton.UseVisualStyleBackColor = false;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
@@ -748,14 +764,15 @@ namespace SimpleMMAScoreboard
             // saveButton
             // 
             this.saveButton.BackColor = System.Drawing.Color.White;
-            this.saveButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.saveButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.saveButton.FlatAppearance.BorderSize = 0;
             this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveButton.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveButton.Location = new System.Drawing.Point(182, 512);
+            this.saveButton.Location = new System.Drawing.Point(186, 590);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(112, 37);
             this.saveButton.TabIndex = 49;
+            this.saveButton.TabStop = false;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
@@ -763,7 +780,7 @@ namespace SimpleMMAScoreboard
             // resetR1_Button
             // 
             this.resetR1_Button.BackColor = System.Drawing.Color.White;
-            this.resetR1_Button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.resetR1_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetR1_Button.FlatAppearance.BorderSize = 0;
             this.resetR1_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetR1_Button.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -771,6 +788,7 @@ namespace SimpleMMAScoreboard
             this.resetR1_Button.Name = "resetR1_Button";
             this.resetR1_Button.Size = new System.Drawing.Size(111, 37);
             this.resetR1_Button.TabIndex = 51;
+            this.resetR1_Button.TabStop = false;
             this.resetR1_Button.Text = "Reset Round 1";
             this.resetR1_Button.UseVisualStyleBackColor = false;
             this.resetR1_Button.Click += new System.EventHandler(this.resetR1_Button_Click);
@@ -778,7 +796,7 @@ namespace SimpleMMAScoreboard
             // resetR2_Button
             // 
             this.resetR2_Button.BackColor = System.Drawing.Color.White;
-            this.resetR2_Button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.resetR2_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetR2_Button.FlatAppearance.BorderSize = 0;
             this.resetR2_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetR2_Button.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -786,6 +804,7 @@ namespace SimpleMMAScoreboard
             this.resetR2_Button.Name = "resetR2_Button";
             this.resetR2_Button.Size = new System.Drawing.Size(111, 37);
             this.resetR2_Button.TabIndex = 52;
+            this.resetR2_Button.TabStop = false;
             this.resetR2_Button.Text = "Reset Round 2";
             this.resetR2_Button.UseVisualStyleBackColor = false;
             this.resetR2_Button.Click += new System.EventHandler(this.resetR2_Button_Click);
@@ -793,7 +812,7 @@ namespace SimpleMMAScoreboard
             // resetR3_Button
             // 
             this.resetR3_Button.BackColor = System.Drawing.Color.White;
-            this.resetR3_Button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.resetR3_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetR3_Button.FlatAppearance.BorderSize = 0;
             this.resetR3_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetR3_Button.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -801,6 +820,7 @@ namespace SimpleMMAScoreboard
             this.resetR3_Button.Name = "resetR3_Button";
             this.resetR3_Button.Size = new System.Drawing.Size(111, 37);
             this.resetR3_Button.TabIndex = 53;
+            this.resetR3_Button.TabStop = false;
             this.resetR3_Button.Text = "Reset Round 3";
             this.resetR3_Button.UseVisualStyleBackColor = false;
             this.resetR3_Button.Click += new System.EventHandler(this.resetR3_Button_Click);
@@ -808,7 +828,7 @@ namespace SimpleMMAScoreboard
             // resetR4_Button
             // 
             this.resetR4_Button.BackColor = System.Drawing.Color.White;
-            this.resetR4_Button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.resetR4_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetR4_Button.FlatAppearance.BorderSize = 0;
             this.resetR4_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetR4_Button.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -816,6 +836,7 @@ namespace SimpleMMAScoreboard
             this.resetR4_Button.Name = "resetR4_Button";
             this.resetR4_Button.Size = new System.Drawing.Size(111, 37);
             this.resetR4_Button.TabIndex = 54;
+            this.resetR4_Button.TabStop = false;
             this.resetR4_Button.Text = "Reset Round 4";
             this.resetR4_Button.UseVisualStyleBackColor = false;
             this.resetR4_Button.EnabledChanged += new System.EventHandler(this.Round4_EC);
@@ -825,7 +846,7 @@ namespace SimpleMMAScoreboard
             // resetR5_Button
             // 
             this.resetR5_Button.BackColor = System.Drawing.Color.White;
-            this.resetR5_Button.Cursor = System.Windows.Forms.Cursors.Default;
+            this.resetR5_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.resetR5_Button.FlatAppearance.BorderSize = 0;
             this.resetR5_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.resetR5_Button.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -833,6 +854,7 @@ namespace SimpleMMAScoreboard
             this.resetR5_Button.Name = "resetR5_Button";
             this.resetR5_Button.Size = new System.Drawing.Size(111, 37);
             this.resetR5_Button.TabIndex = 55;
+            this.resetR5_Button.TabStop = false;
             this.resetR5_Button.Text = "Reset Round 5";
             this.resetR5_Button.UseVisualStyleBackColor = false;
             this.resetR5_Button.EnabledChanged += new System.EventHandler(this.Round5_EC);
@@ -938,17 +960,55 @@ namespace SimpleMMAScoreboard
             this.panel5.Controls.Add(this.whiteColor_Button);
             this.panel5.Controls.Add(this.pinkColor_Button);
             this.panel5.Controls.Add(this.blueColor_Button);
-            this.panel5.Location = new System.Drawing.Point(650, 580);
+            this.panel5.Location = new System.Drawing.Point(646, 655);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(82, 20);
             this.panel5.TabIndex = 65;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.judgeBox);
+            this.panel6.Location = new System.Drawing.Point(186, 547);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(230, 37);
+            this.panel6.TabIndex = 58;
+            // 
+            // judgeBox
+            // 
+            this.judgeBox.BackColor = System.Drawing.Color.White;
+            this.judgeBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.judgeBox.Font = new System.Drawing.Font("Bahnschrift SemiCondensed", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.judgeBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.judgeBox.Location = new System.Drawing.Point(0, 5);
+            this.judgeBox.MaxLength = 18;
+            this.judgeBox.Name = "judgeBox";
+            this.judgeBox.Size = new System.Drawing.Size(230, 26);
+            this.judgeBox.TabIndex = 23;
+            this.judgeBox.TabStop = false;
+            this.judgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.judgeBox.TextChanged += new System.EventHandler(this.judgeBox_TextChanged);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.Location = new System.Drawing.Point(185, 528);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 16);
+            this.label20.TabIndex = 66;
+            this.label20.Text = "Judged By:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(744, 612);
+            this.ClientSize = new System.Drawing.Size(747, 691);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.resetR5_Button);
             this.Controls.Add(this.resetR4_Button);
             this.Controls.Add(this.resetR3_Button);
@@ -1015,6 +1075,8 @@ namespace SimpleMMAScoreboard
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1082,6 +1144,9 @@ namespace SimpleMMAScoreboard
         private System.Windows.Forms.Button whiteColor_Button;
         private System.Windows.Forms.Button darkColor_Button;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox judgeBox;
+        private System.Windows.Forms.Label label20;
     }
 }
 
