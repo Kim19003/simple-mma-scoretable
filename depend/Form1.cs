@@ -868,11 +868,14 @@ namespace SimpleMMAScoreboard
             label11.ForeColor = SystemColors.ControlText;
             label5.ForeColor = SystemColors.ControlText;
             label16.ForeColor = SystemColors.ControlText;
+            label20.ForeColor = SystemColors.ControlText;
 
             textBox1.BackColor = Color.Gainsboro;
             panel1.BackColor = Color.Gainsboro;
             textBox4.BackColor = Color.Gainsboro;
             panel2.BackColor = Color.Gainsboro;
+            judgeBox.BackColor = Color.Gainsboro;
+            panel6.BackColor = Color.Gainsboro;
 
             comboBox11.BackColor = Color.Gainsboro;
 
@@ -925,11 +928,14 @@ namespace SimpleMMAScoreboard
             label11.ForeColor = Color.White;
             label5.ForeColor = Color.White;
             label16.ForeColor = Color.White;
+            label20.ForeColor = Color.White;
 
             textBox1.BackColor = Color.White;
             panel1.BackColor = Color.White;
             textBox4.BackColor = Color.White;
             panel2.BackColor = Color.White;
+            judgeBox.BackColor = Color.White;
+            panel6.BackColor = Color.White;
 
             comboBox11.BackColor = Color.White;
 
