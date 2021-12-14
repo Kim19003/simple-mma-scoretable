@@ -50,6 +50,8 @@ namespace SimpleMMAScoreboard
         public Form1()
         {
             InitializeComponent();
+
+            MaximizeBox = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "7ca66b7b-7d87-4a84-9055-f4474bc01961": {
+      "ProjectGuid": "7ca66b7b-7d87-4a84-9055-f4474bc01961",
+      "DisplayName": "Simple MMA Scoreboard",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
