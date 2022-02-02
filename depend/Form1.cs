@@ -135,199 +135,54 @@ namespace SimpleMMAScoreboard
         // -- Left side --
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.Text != null && comboBox1.Text != "")
-            {
-                if (box1_Set == false)
-                {
-                    if (PointsChecker(comboBox1))
-                    {
-                        PointsForerunner(comboBox1, comboBox21);
-
-                        box1_Set = true;
-                        comboBox1.Enabled = false;
-
-                        l_points1 = Convert.ToInt32(comboBox1.Text);
-
-                        count += Convert.ToInt32(comboBox1.Text);
-                        textBox2.Text = Convert.ToString(count);
-                    }
-                }
-            }
+            HandlePoints(comboBox1, comboBox21, textBox2, ref box1_Set, ref l_points1, ref count, false);
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox3.Text != null && comboBox3.Text != "")
-            {
-                if (box2_Set == false)
-                {
-                    if (PointsChecker(comboBox3))
-                    {
-                        PointsForerunner(comboBox3, comboBox19);
-
-                        box2_Set = true;
-                        comboBox3.Enabled = false;
-
-                        l_points2 = Convert.ToInt32(comboBox3.Text);
-
-                        count += Convert.ToInt32(comboBox3.Text);
-                        textBox2.Text = Convert.ToString(count);
-                    }
-                }
-            }
+            HandlePoints(comboBox3, comboBox19, textBox2, ref box2_Set, ref l_points2, ref count, false);
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox8.Text != null && comboBox8.Text != "")
-            {
-                if (box3_Set == false)
-                {
-                    if (PointsChecker(comboBox8))
-                    {
-                        PointsForerunner(comboBox8, comboBox17);
-
-                        box3_Set = true;
-                        comboBox8.Enabled = false;
-
-                        l_points3 = Convert.ToInt32(comboBox8.Text);
-
-                        count += Convert.ToInt32(comboBox8.Text);
-                        textBox2.Text = Convert.ToString(count);
-                    }
-                }
-            }
+            HandlePoints(comboBox8, comboBox17, textBox2, ref box3_Set, ref l_points3, ref count, false);
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox6.Text != null && comboBox6.Text != "")
-            {
-                if (box4_Set == false)
-                {
-                    if (PointsChecker(comboBox6))
-                    {
-                        PointsForerunner(comboBox6, comboBox15);
-
-                        box4_Set = true;
-                        comboBox6.Enabled = false;
-
-                        l_points4 = Convert.ToInt32(comboBox6.Text);
-
-                        count += Convert.ToInt32(comboBox6.Text);
-                        textBox2.Text = Convert.ToString(count);
-                    }
-                }
-            }
+            HandlePoints(comboBox6, comboBox15, textBox2, ref box4_Set, ref l_points4, ref count, false);
         }
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox10.Text != null && comboBox10.Text != "")
-            {
-                if (box5_Set == false)
-                {
-                    if (PointsChecker(comboBox10))
-                    {
-                        PointsForerunner(comboBox10, comboBox13);
-
-                        box5_Set = true;
-                        comboBox10.Enabled = false;
-
-                        l_points5 = Convert.ToInt32(comboBox10.Text);
-
-                        count += Convert.ToInt32(comboBox10.Text);
-                        textBox2.Text = Convert.ToString(count);
-                    }
-                }
-            }
+            HandlePoints(comboBox10, comboBox13, textBox2, ref box5_Set, ref l_points5, ref count, false);
         }
 
         #region LeftMinus
         // - Left minus -
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox2.Text != null && comboBox2.Text != "")
-            {
-                if (minus_box1_Set == false)
-                {
-                    minus_box1_Set = true;
-                    comboBox2.Enabled = false;
-
-                    l_cuts1 = Convert.ToInt32(comboBox2.Text);
-
-                    count -= Convert.ToInt32(comboBox2.Text);
-                    textBox2.Text = Convert.ToString(count);
-                }
-            }
+            HandlePoints(comboBox2, null, textBox2, ref minus_box1_Set, ref l_cuts1, ref count, true);
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox4.Text != null && comboBox4.Text != "")
-            {
-                if (minus_box2_Set == false)
-                {
-                    minus_box2_Set = true;
-                    comboBox4.Enabled = false;
-
-                    l_cuts2 = Convert.ToInt32(comboBox4.Text);
-
-                    count -= Convert.ToInt32(comboBox4.Text);
-                    textBox2.Text = Convert.ToString(count);
-                }
-            }
+            HandlePoints(comboBox4, null, textBox2, ref minus_box2_Set, ref l_cuts2, ref count, true);
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox7.Text != null && comboBox7.Text != "")
-            {
-                if (minus_box3_Set == false)
-                {
-                    minus_box3_Set = true;
-                    comboBox7.Enabled = false;
-
-                    l_cuts3 = Convert.ToInt32(comboBox7.Text);
-
-                    count -= Convert.ToInt32(comboBox7.Text);
-                    textBox2.Text = Convert.ToString(count);
-                }
-            }
+            HandlePoints(comboBox7, null, textBox2, ref minus_box3_Set, ref l_cuts3, ref count, true);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox5.Text != null && comboBox5.Text != "")
-            {
-                if (minus_box4_Set == false)
-                {
-                    minus_box4_Set = true;
-                    comboBox5.Enabled = false;
-
-                    l_cuts4 = Convert.ToInt32(comboBox5.Text);
-
-                    count -= Convert.ToInt32(comboBox5.Text);
-                    textBox2.Text = Convert.ToString(count);
-                }
-            }
+            HandlePoints(comboBox5, null, textBox2, ref minus_box4_Set, ref l_cuts4, ref count, true);
         }
 
         private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox9.Text != null && comboBox9.Text != "")
-            {
-                if (minus_box5_Set == false)
-                {
-                    minus_box5_Set = true;
-                    comboBox9.Enabled = false;
-
-                    l_cuts5 = Convert.ToInt32(comboBox9.Text);
-
-                    count -= Convert.ToInt32(comboBox9.Text);
-                    textBox2.Text = Convert.ToString(count);
-                }
-            }
+            HandlePoints(comboBox9, null, textBox2, ref minus_box5_Set, ref l_cuts5, ref count, true);
         }
         #endregion
 
@@ -337,199 +192,54 @@ namespace SimpleMMAScoreboard
         // -- Right side --
         private void comboBox21_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox21.Text != null && comboBox21.Text != "")
-            {
-                if (r_box1_Set == false)
-                {
-                    if (PointsChecker(comboBox21))
-                    {
-                        PointsForerunner(comboBox21, comboBox1);
-
-                        r_box1_Set = true;
-                        comboBox21.Enabled = false;
-
-                        r_points1 = Convert.ToInt32(comboBox21.Text);
-
-                        count2 += Convert.ToInt32(comboBox21.Text);
-                        textBox3.Text = Convert.ToString(count2);
-                    }
-                }
-            }
+            HandlePoints(comboBox21, comboBox1, textBox3, ref r_box1_Set, ref r_points1, ref count2, false);
         }
 
         private void comboBox19_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox19.Text != null && comboBox19.Text != "")
-            {
-                if (r_box2_Set == false)
-                {
-                    if (PointsChecker(comboBox19))
-                    {
-                        PointsForerunner(comboBox19, comboBox3);
-
-                        r_box2_Set = true;
-                        comboBox19.Enabled = false;
-
-                        r_points2 = Convert.ToInt32(comboBox19.Text);
-
-                        count2 += Convert.ToInt32(comboBox19.Text);
-                        textBox3.Text = Convert.ToString(count2);
-                    }
-                }
-            }
+            HandlePoints(comboBox19, comboBox3, textBox3, ref r_box2_Set, ref r_points2, ref count2, false);
         }
 
         private void comboBox17_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox17.Text != null && comboBox17.Text != "")
-            {
-                if (r_box3_Set == false)
-                {
-                    if (PointsChecker(comboBox17))
-                    {
-                        PointsForerunner(comboBox17, comboBox8);
-
-                        r_box3_Set = true;
-                        comboBox17.Enabled = false;
-
-                        r_points3 = Convert.ToInt32(comboBox17.Text);
-
-                        count2 += Convert.ToInt32(comboBox17.Text);
-                        textBox3.Text = Convert.ToString(count2);
-                    }
-                }
-            }
+            HandlePoints(comboBox17, comboBox8, textBox3, ref r_box3_Set, ref r_points3, ref count2, false);
         }
 
         private void comboBox15_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox15.Text != null && comboBox15.Text != "")
-            {
-                if (r_box4_Set == false)
-                {
-                    if (PointsChecker(comboBox15))
-                    {
-                        PointsForerunner(comboBox15, comboBox6);
-
-                        r_box4_Set = true;
-                        comboBox15.Enabled = false;
-
-                        r_points4 = Convert.ToInt32(comboBox15.Text);
-
-                        count2 += Convert.ToInt32(comboBox15.Text);
-                        textBox3.Text = Convert.ToString(count2);
-                    }
-                }
-            }
+            HandlePoints(comboBox15, comboBox6, textBox3, ref r_box4_Set, ref r_points4, ref count2, false);
         }
 
         private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox13.Text != null && comboBox13.Text != "")
-            {
-                if (r_box5_Set == false)
-                {
-                    if (PointsChecker(comboBox13))
-                    {
-                        PointsForerunner(comboBox13, comboBox10);
-
-                        r_box5_Set = true;
-                        comboBox13.Enabled = false;
-
-                        r_points5 = Convert.ToInt32(comboBox13.Text);
-
-                        count2 += Convert.ToInt32(comboBox13.Text);
-                        textBox3.Text = Convert.ToString(count2);
-                    }
-                }
-            }
+            HandlePoints(comboBox13, comboBox10, textBox3, ref r_box5_Set, ref r_points5, ref count2, false);
         }
 
         #region RightMinus
         // - Right minus -
         private void comboBox20_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox20.Text != null && comboBox20.Text != "")
-            {
-                if (r_minus_box1_Set == false)
-                {
-                    r_minus_box1_Set = true;
-                    comboBox20.Enabled = false;
-
-                    r_cuts1 = Convert.ToInt32(comboBox20.Text);
-
-                    count2 -= Convert.ToInt32(comboBox20.Text);
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
+            HandlePoints(comboBox20, null, textBox3, ref r_minus_box1_Set, ref r_cuts1, ref count2, true);
         }
 
         private void comboBox18_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox18.Text != null && comboBox18.Text != "")
-            {
-                if (r_minus_box2_Set == false)
-                {
-                    r_minus_box2_Set = true;
-                    comboBox18.Enabled = false;
-
-                    r_cuts2 = Convert.ToInt32(comboBox18.Text);
-
-                    count2 -= Convert.ToInt32(comboBox18.Text);
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
+            HandlePoints(comboBox18, null, textBox3, ref r_minus_box2_Set, ref r_cuts2, ref count2, true);
         }
 
         private void comboBox16_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox16.Text != null && comboBox16.Text != "")
-            {
-                if (r_minus_box3_Set == false)
-                {
-                    r_minus_box3_Set = true;
-                    comboBox16.Enabled = false;
-
-                    r_cuts3 = Convert.ToInt32(comboBox16.Text);
-
-                    count2 -= Convert.ToInt32(comboBox16.Text);
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
+            HandlePoints(comboBox16, null, textBox3, ref r_minus_box3_Set, ref r_cuts3, ref count2, true);
         }
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox14.Text != null && comboBox14.Text != "")
-            {
-                if (r_minus_box4_Set == false)
-                {
-                    r_minus_box4_Set = true;
-                    comboBox14.Enabled = false;
-
-                    r_cuts4 = Convert.ToInt32(comboBox14.Text);
-
-                    count2 -= Convert.ToInt32(comboBox14.Text);
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
+            HandlePoints(comboBox14, null, textBox3, ref r_minus_box4_Set, ref r_cuts4, ref count2, true);
         }
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox12.Text != null && comboBox12.Text != "")
-            {
-                if (r_minus_box5_Set == false)
-                {
-                    r_minus_box5_Set = true;
-                    comboBox12.Enabled = false;
-
-                    r_cuts5 = Convert.ToInt32(comboBox12.Text);
-
-                    count2 -= Convert.ToInt32(comboBox12.Text);
-                    textBox3.Text = Convert.ToString(count2);
-                }
-            }
+            HandlePoints(comboBox12, null, textBox3, ref r_minus_box5_Set, ref r_cuts5, ref count2, true);
         }
         #endregion
 
@@ -1483,6 +1193,41 @@ namespace SimpleMMAScoreboard
             {
                 count2 -= r_round4_value + r_round5_value;
                 textBox3.Text = Convert.ToString(count2);
+            }
+        }
+        #endregion
+
+        #region Methods
+        private void HandlePoints(ComboBox thisPointsBox, ComboBox relationPointsBox, TextBox totalPointsBox, ref bool boxIsSet, ref int totalPoints, ref int count, bool isMinus)
+        {
+            if (thisPointsBox.Text != null && thisPointsBox.Text != "")
+            {
+                if (boxIsSet == false)
+                {
+                    if (PointsChecker(thisPointsBox) || isMinus)
+                    {
+                        if (!isMinus)
+                        {
+                            PointsForerunner(thisPointsBox, relationPointsBox);
+                        }
+
+                        boxIsSet = true;
+                        thisPointsBox.Enabled = false;
+
+                        totalPoints = Convert.ToInt32(thisPointsBox.Text);
+
+                        if (!isMinus)
+                        {
+                            count += Convert.ToInt32(thisPointsBox.Text);
+                        }
+                        else
+                        {
+                            count -= Convert.ToInt32(thisPointsBox.Text);
+                        }
+
+                        totalPointsBox.Text = Convert.ToString(count);
+                    }
+                }
             }
         }
         #endregion
