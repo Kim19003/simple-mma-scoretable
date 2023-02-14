@@ -111,6 +111,7 @@ namespace SimpleMMAScoreboard
             this.comboBox1.ForeColor = System.Drawing.Color.Black;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -120,6 +121,7 @@ namespace SimpleMMAScoreboard
             this.comboBox1.Size = new System.Drawing.Size(85, 33);
             this.comboBox1.TabIndex = 3;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox2
             // 
@@ -131,16 +133,16 @@ namespace SimpleMMAScoreboard
             this.comboBox2.ForeColor = System.Drawing.Color.Black;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox2.Location = new System.Drawing.Point(174, 176);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(64, 33);
             this.comboBox2.TabIndex = 4;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox3
             // 
@@ -152,6 +154,7 @@ namespace SimpleMMAScoreboard
             this.comboBox3.ForeColor = System.Drawing.Color.Black;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -161,6 +164,7 @@ namespace SimpleMMAScoreboard
             this.comboBox3.Size = new System.Drawing.Size(85, 33);
             this.comboBox3.TabIndex = 8;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.comboBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox4
             // 
@@ -172,16 +176,16 @@ namespace SimpleMMAScoreboard
             this.comboBox4.ForeColor = System.Drawing.Color.Black;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox4.Location = new System.Drawing.Point(174, 215);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(64, 33);
             this.comboBox4.TabIndex = 9;
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
+            this.comboBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox5
             // 
@@ -193,16 +197,16 @@ namespace SimpleMMAScoreboard
             this.comboBox5.ForeColor = System.Drawing.Color.Black;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox5.Location = new System.Drawing.Point(174, 293);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(64, 33);
             this.comboBox5.TabIndex = 19;
             this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            this.comboBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox6
             // 
@@ -214,6 +218,7 @@ namespace SimpleMMAScoreboard
             this.comboBox6.ForeColor = System.Drawing.Color.Black;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -223,6 +228,7 @@ namespace SimpleMMAScoreboard
             this.comboBox6.Size = new System.Drawing.Size(85, 33);
             this.comboBox6.TabIndex = 18;
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            this.comboBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox7
             // 
@@ -234,16 +240,16 @@ namespace SimpleMMAScoreboard
             this.comboBox7.ForeColor = System.Drawing.Color.Black;
             this.comboBox7.FormattingEnabled = true;
             this.comboBox7.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox7.Location = new System.Drawing.Point(174, 254);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(64, 33);
             this.comboBox7.TabIndex = 14;
             this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
+            this.comboBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox8
             // 
@@ -255,6 +261,7 @@ namespace SimpleMMAScoreboard
             this.comboBox8.ForeColor = System.Drawing.Color.Black;
             this.comboBox8.FormattingEnabled = true;
             this.comboBox8.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -264,6 +271,7 @@ namespace SimpleMMAScoreboard
             this.comboBox8.Size = new System.Drawing.Size(85, 33);
             this.comboBox8.TabIndex = 13;
             this.comboBox8.SelectedIndexChanged += new System.EventHandler(this.comboBox8_SelectedIndexChanged);
+            this.comboBox8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox9
             // 
@@ -275,16 +283,16 @@ namespace SimpleMMAScoreboard
             this.comboBox9.ForeColor = System.Drawing.Color.Black;
             this.comboBox9.FormattingEnabled = true;
             this.comboBox9.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox9.Location = new System.Drawing.Point(174, 332);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(64, 33);
             this.comboBox9.TabIndex = 24;
             this.comboBox9.SelectedIndexChanged += new System.EventHandler(this.comboBox9_SelectedIndexChanged);
+            this.comboBox9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox10
             // 
@@ -296,6 +304,7 @@ namespace SimpleMMAScoreboard
             this.comboBox10.ForeColor = System.Drawing.Color.Black;
             this.comboBox10.FormattingEnabled = true;
             this.comboBox10.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -305,6 +314,7 @@ namespace SimpleMMAScoreboard
             this.comboBox10.Size = new System.Drawing.Size(85, 33);
             this.comboBox10.TabIndex = 23;
             this.comboBox10.SelectedIndexChanged += new System.EventHandler(this.comboBox10_SelectedIndexChanged);
+            this.comboBox10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // textBox1
             // 
@@ -559,16 +569,16 @@ namespace SimpleMMAScoreboard
             this.comboBox12.ForeColor = System.Drawing.Color.Black;
             this.comboBox12.FormattingEnabled = true;
             this.comboBox12.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox12.Location = new System.Drawing.Point(601, 333);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(64, 33);
             this.comboBox12.TabIndex = 26;
             this.comboBox12.SelectedIndexChanged += new System.EventHandler(this.comboBox12_SelectedIndexChanged);
+            this.comboBox12.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox13
             // 
@@ -580,6 +590,7 @@ namespace SimpleMMAScoreboard
             this.comboBox13.ForeColor = System.Drawing.Color.Black;
             this.comboBox13.FormattingEnabled = true;
             this.comboBox13.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -589,6 +600,7 @@ namespace SimpleMMAScoreboard
             this.comboBox13.Size = new System.Drawing.Size(85, 33);
             this.comboBox13.TabIndex = 25;
             this.comboBox13.SelectedIndexChanged += new System.EventHandler(this.comboBox13_SelectedIndexChanged);
+            this.comboBox13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox14
             // 
@@ -600,16 +612,16 @@ namespace SimpleMMAScoreboard
             this.comboBox14.ForeColor = System.Drawing.Color.Black;
             this.comboBox14.FormattingEnabled = true;
             this.comboBox14.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox14.Location = new System.Drawing.Point(601, 294);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(64, 33);
             this.comboBox14.TabIndex = 21;
             this.comboBox14.SelectedIndexChanged += new System.EventHandler(this.comboBox14_SelectedIndexChanged);
+            this.comboBox14.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox15
             // 
@@ -621,6 +633,7 @@ namespace SimpleMMAScoreboard
             this.comboBox15.ForeColor = System.Drawing.Color.Black;
             this.comboBox15.FormattingEnabled = true;
             this.comboBox15.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -630,6 +643,7 @@ namespace SimpleMMAScoreboard
             this.comboBox15.Size = new System.Drawing.Size(85, 33);
             this.comboBox15.TabIndex = 20;
             this.comboBox15.SelectedIndexChanged += new System.EventHandler(this.comboBox15_SelectedIndexChanged);
+            this.comboBox15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox16
             // 
@@ -641,16 +655,16 @@ namespace SimpleMMAScoreboard
             this.comboBox16.ForeColor = System.Drawing.Color.Black;
             this.comboBox16.FormattingEnabled = true;
             this.comboBox16.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox16.Location = new System.Drawing.Point(601, 255);
             this.comboBox16.Name = "comboBox16";
             this.comboBox16.Size = new System.Drawing.Size(64, 33);
             this.comboBox16.TabIndex = 16;
             this.comboBox16.SelectedIndexChanged += new System.EventHandler(this.comboBox16_SelectedIndexChanged);
+            this.comboBox16.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox17
             // 
@@ -662,6 +676,7 @@ namespace SimpleMMAScoreboard
             this.comboBox17.ForeColor = System.Drawing.Color.Black;
             this.comboBox17.FormattingEnabled = true;
             this.comboBox17.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -671,6 +686,7 @@ namespace SimpleMMAScoreboard
             this.comboBox17.Size = new System.Drawing.Size(85, 33);
             this.comboBox17.TabIndex = 15;
             this.comboBox17.SelectedIndexChanged += new System.EventHandler(this.comboBox17_SelectedIndexChanged);
+            this.comboBox17.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox18
             // 
@@ -682,16 +698,16 @@ namespace SimpleMMAScoreboard
             this.comboBox18.ForeColor = System.Drawing.Color.Black;
             this.comboBox18.FormattingEnabled = true;
             this.comboBox18.Items.AddRange(new object[] {
+            "-",
             "1",
             "2",
-            "3",
-            "4",
-            "5"});
+            "3"});
             this.comboBox18.Location = new System.Drawing.Point(601, 216);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(64, 33);
             this.comboBox18.TabIndex = 11;
             this.comboBox18.SelectedIndexChanged += new System.EventHandler(this.comboBox18_SelectedIndexChanged);
+            this.comboBox18.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox19
             // 
@@ -703,6 +719,7 @@ namespace SimpleMMAScoreboard
             this.comboBox19.ForeColor = System.Drawing.Color.Black;
             this.comboBox19.FormattingEnabled = true;
             this.comboBox19.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -712,6 +729,7 @@ namespace SimpleMMAScoreboard
             this.comboBox19.Size = new System.Drawing.Size(85, 33);
             this.comboBox19.TabIndex = 10;
             this.comboBox19.SelectedIndexChanged += new System.EventHandler(this.comboBox19_SelectedIndexChanged);
+            this.comboBox19.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox20
             // 
@@ -723,13 +741,16 @@ namespace SimpleMMAScoreboard
             this.comboBox20.ForeColor = System.Drawing.Color.Black;
             this.comboBox20.FormattingEnabled = true;
             this.comboBox20.Items.AddRange(new object[] {
+            "-",
             "1",
-            "2"});
+            "2",
+            "3"});
             this.comboBox20.Location = new System.Drawing.Point(601, 176);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(64, 33);
             this.comboBox20.TabIndex = 6;
             this.comboBox20.SelectedIndexChanged += new System.EventHandler(this.comboBox20_SelectedIndexChanged);
+            this.comboBox20.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // comboBox21
             // 
@@ -741,6 +762,7 @@ namespace SimpleMMAScoreboard
             this.comboBox21.ForeColor = System.Drawing.Color.Black;
             this.comboBox21.FormattingEnabled = true;
             this.comboBox21.Items.AddRange(new object[] {
+            "-",
             "10",
             "9",
             "8",
@@ -750,6 +772,7 @@ namespace SimpleMMAScoreboard
             this.comboBox21.Size = new System.Drawing.Size(85, 33);
             this.comboBox21.TabIndex = 5;
             this.comboBox21.SelectedIndexChanged += new System.EventHandler(this.comboBox21_SelectedIndexChanged);
+            this.comboBox21.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PointsComboBox_KeyDown);
             // 
             // label6
             // 
@@ -854,6 +877,7 @@ namespace SimpleMMAScoreboard
             this.resetR1_Button.TabIndex = 7;
             this.resetR1_Button.Text = "Reset Round 1";
             this.resetR1_Button.UseVisualStyleBackColor = false;
+            this.resetR1_Button.Visible = false;
             this.resetR1_Button.Click += new System.EventHandler(this.resetR1_Button_Click);
             // 
             // resetR2_Button
@@ -869,6 +893,7 @@ namespace SimpleMMAScoreboard
             this.resetR2_Button.TabIndex = 12;
             this.resetR2_Button.Text = "Reset Round 2";
             this.resetR2_Button.UseVisualStyleBackColor = false;
+            this.resetR2_Button.Visible = false;
             this.resetR2_Button.Click += new System.EventHandler(this.resetR2_Button_Click);
             // 
             // resetR3_Button
@@ -884,6 +909,7 @@ namespace SimpleMMAScoreboard
             this.resetR3_Button.TabIndex = 17;
             this.resetR3_Button.Text = "Reset Round 3";
             this.resetR3_Button.UseVisualStyleBackColor = false;
+            this.resetR3_Button.Visible = false;
             this.resetR3_Button.Click += new System.EventHandler(this.resetR3_Button_Click);
             // 
             // resetR4_Button
@@ -899,6 +925,7 @@ namespace SimpleMMAScoreboard
             this.resetR4_Button.TabIndex = 22;
             this.resetR4_Button.Text = "Reset Round 4";
             this.resetR4_Button.UseVisualStyleBackColor = false;
+            this.resetR4_Button.Visible = false;
             this.resetR4_Button.EnabledChanged += new System.EventHandler(this.Round4_EC);
             this.resetR4_Button.Click += new System.EventHandler(this.resetR4_Button_Click);
             this.resetR4_Button.Paint += new System.Windows.Forms.PaintEventHandler(this.Round4_Paint);
@@ -916,6 +943,7 @@ namespace SimpleMMAScoreboard
             this.resetR5_Button.TabIndex = 27;
             this.resetR5_Button.Text = "Reset Round 5";
             this.resetR5_Button.UseVisualStyleBackColor = false;
+            this.resetR5_Button.Visible = false;
             this.resetR5_Button.EnabledChanged += new System.EventHandler(this.Round5_EC);
             this.resetR5_Button.Click += new System.EventHandler(this.resetR5_Button_Click);
             this.resetR5_Button.Paint += new System.Windows.Forms.PaintEventHandler(this.Round5_Paint);

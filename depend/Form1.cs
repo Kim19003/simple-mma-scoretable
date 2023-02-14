@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.IO;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
-using System.Runtime.InteropServices;
 
 namespace SimpleMMAScoreboard
 {
+    public enum PointSide
+    {
+        Left,
+        Right
+    };
+
     public partial class Form1 : Form
     {
         public string AppName { get { return appName; } }
@@ -22,27 +20,16 @@ namespace SimpleMMAScoreboard
         private readonly string appCreator = "Kim19003";
 
         #region Variables
-        // Counters
-        int count = 0, count2 = 0;
-
         // Fighter and judge names
         string fighter1, fighter2, judge;
 
         // Round amount
         int rounds_amount = 3;
 
-        // Boxes set
-        bool box1_Set = false, box2_Set = false, box3_Set = false, box4_Set = false, box5_Set = false, r_box1_Set = false,
-        r_box2_Set = false, r_box3_Set = false, r_box4_Set = false, r_box5_Set = false;
-
-        // Minux boxes set
-        bool minus_box1_Set = false, minus_box2_Set = false, minus_box3_Set = false, minus_box4_Set = false, minus_box5_Set = false,
-        r_minus_box1_Set = false, r_minus_box2_Set = false, r_minus_box3_Set = false, r_minus_box4_Set = false, r_minus_box5_Set = false;
-
         // Points
         int l_points1 = 0, l_points2 = 0, l_points3 = 0, l_points4 = 0, l_points5 = 0, l_cuts1 = 0, l_cuts2 = 0, l_cuts3 = 0,
         l_cuts4 = 0, l_cuts5 = 0, r_points1 = 0, r_points2 = 0, r_points3 = 0, r_points4 = 0, r_points5 = 0, r_cuts1 = 0,
-        r_cuts2 = 0, r_cuts3 = 0, r_cuts4 = 0, r_cuts5 = 0, l_totalPoints = 0, r_totalPoints = 0;
+        r_cuts2 = 0, r_cuts3 = 0, r_cuts4 = 0, r_cuts5 = 0;
         // ---
         #endregion
 
@@ -60,17 +47,8 @@ namespace SimpleMMAScoreboard
         {
             if (comboBox11.Text == "3")
             {
-                comboBox6.Enabled = false;
-                comboBox10.Enabled = false;
-                comboBox5.Enabled = false;
-                comboBox9.Enabled = false;
-                comboBox13.Enabled = false;
-                comboBox15.Enabled = false;
-                comboBox14.Enabled = false;
-                comboBox12.Enabled = false;
-
-                resetR4_Button.Enabled = false;
-                resetR5_Button.Enabled = false;
+                RoundAmount3();
+                ClearAll();
             }
 
             Color_Dark(); // Starting theme
@@ -133,58 +111,69 @@ namespace SimpleMMAScoreboard
          * Round 5: comboBox10 -> comboBox13
          */
 
+        private void PointsComboBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                ComboBox comboBox = sender as ComboBox;
+                comboBox.Text = string.Empty;
+                ResetPointBoxItems(comboBox);
+                CalculateSidePoints(GetSide(comboBox));
+            }
+        }
+
         #region LeftPointBoxes
         // -- Left side --
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox1, comboBox21, textBox2, ref box1_Set, ref l_points1, ref count, false);
+            HandlePoints(comboBox1, comboBox21, ref l_points1, false, PointSide.Left);
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox3, comboBox19, textBox2, ref box2_Set, ref l_points2, ref count, false);
+            HandlePoints(comboBox3, comboBox19, ref l_points2, false, PointSide.Left);
         }
 
         private void comboBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox8, comboBox17, textBox2, ref box3_Set, ref l_points3, ref count, false);
+            HandlePoints(comboBox8, comboBox17, ref l_points3, false, PointSide.Left);
         }
 
         private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox6, comboBox15, textBox2, ref box4_Set, ref l_points4, ref count, false);
+            HandlePoints(comboBox6, comboBox15, ref l_points4, false, PointSide.Left);
         }
 
         private void comboBox10_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox10, comboBox13, textBox2, ref box5_Set, ref l_points5, ref count, false);
+            HandlePoints(comboBox10, comboBox13, ref l_points5, false, PointSide.Left);
         }
 
         #region LeftMinus
         // - Left minus -
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox2, null, textBox2, ref minus_box1_Set, ref l_cuts1, ref count, true);
+            HandlePoints(comboBox2, null, ref l_cuts1, true, PointSide.Left);
         }
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox4, null, textBox2, ref minus_box2_Set, ref l_cuts2, ref count, true);
+            HandlePoints(comboBox4, null, ref l_cuts2, true, PointSide.Left);
         }
 
         private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox7, null, textBox2, ref minus_box3_Set, ref l_cuts3, ref count, true);
+            HandlePoints(comboBox7, null, ref l_cuts3, true, PointSide.Left);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox5, null, textBox2, ref minus_box4_Set, ref l_cuts4, ref count, true);
+            HandlePoints(comboBox5, null, ref l_cuts4, true, PointSide.Left);
         }
 
         private void comboBox9_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox9, null, textBox2, ref minus_box5_Set, ref l_cuts5, ref count, true);
+            HandlePoints(comboBox9, null, ref l_cuts5, true, PointSide.Left);
         }
         #endregion
 
@@ -194,54 +183,54 @@ namespace SimpleMMAScoreboard
         // -- Right side --
         private void comboBox21_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox21, comboBox1, textBox3, ref r_box1_Set, ref r_points1, ref count2, false);
+            HandlePoints(comboBox21, comboBox1, ref r_points1, false, PointSide.Right);
         }
 
         private void comboBox19_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox19, comboBox3, textBox3, ref r_box2_Set, ref r_points2, ref count2, false);
+            HandlePoints(comboBox19, comboBox3, ref r_points2, false, PointSide.Right);
         }
 
         private void comboBox17_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox17, comboBox8, textBox3, ref r_box3_Set, ref r_points3, ref count2, false);
+            HandlePoints(comboBox17, comboBox8, ref r_points3, false, PointSide.Right);
         }
 
         private void comboBox15_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox15, comboBox6, textBox3, ref r_box4_Set, ref r_points4, ref count2, false);
+            HandlePoints(comboBox15, comboBox6, ref r_points4, false, PointSide.Right);
         }
 
         private void comboBox13_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox13, comboBox10, textBox3, ref r_box5_Set, ref r_points5, ref count2, false);
+            HandlePoints(comboBox13, comboBox10, ref r_points5, false, PointSide.Right);
         }
 
         #region RightMinus
         // - Right minus -
         private void comboBox20_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox20, null, textBox3, ref r_minus_box1_Set, ref r_cuts1, ref count2, true);
+            HandlePoints(comboBox20, null, ref r_cuts1, true, PointSide.Right);
         }
 
         private void comboBox18_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox18, null, textBox3, ref r_minus_box2_Set, ref r_cuts2, ref count2, true);
+            HandlePoints(comboBox18, null, ref r_cuts2, true, PointSide.Right);
         }
 
         private void comboBox16_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox16, null, textBox3, ref r_minus_box3_Set, ref r_cuts3, ref count2, true);
+            HandlePoints(comboBox16, null, ref r_cuts3, true, PointSide.Right);
         }
 
         private void comboBox14_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox14, null, textBox3, ref r_minus_box4_Set, ref r_cuts4, ref count2, true);
+            HandlePoints(comboBox14, null, ref r_cuts4, true, PointSide.Right);
         }
 
         private void comboBox12_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HandlePoints(comboBox12, null, textBox3, ref r_minus_box5_Set, ref r_cuts5, ref count2, true);
+            HandlePoints(comboBox12, null, ref r_cuts5, true, PointSide.Right);
         }
         #endregion
 
@@ -255,11 +244,11 @@ namespace SimpleMMAScoreboard
         {
             if (comboBox11.Text == "5")
             {
-                Round_Amount_5();
+                RoundAmount5();
             }
             else
             {
-                Round_Amount_3();
+                RoundAmount3();
             }
         }
 
@@ -270,7 +259,7 @@ namespace SimpleMMAScoreboard
 
             if (result == DialogResult.Yes)
             {
-                Clear_All();
+                ClearAll();
             }
             else
             {
@@ -296,27 +285,27 @@ namespace SimpleMMAScoreboard
 
         private void resetR1_Button_Click(object sender, EventArgs e)
         {
-            Clear_Round1();
+            ClearRound1();
         }
 
         private void resetR2_Button_Click(object sender, EventArgs e)
         {
-            Clear_Round2();
+            ClearRound2();
         }
 
         private void resetR3_Button_Click(object sender, EventArgs e)
         {
-            Clear_Round3();
+            ClearRound3();
         }
 
         private void resetR4_Button_Click(object sender, EventArgs e)
         {
-            Clear_Round4();
+            ClearRound4();
         }
 
         private void resetR5_Button_Click(object sender, EventArgs e)
         {
-            Clear_Round5();
+            ClearRound5();
         }
         #endregion
 
@@ -359,39 +348,34 @@ namespace SimpleMMAScoreboard
 
         private void Save()
         {
-            DateTime DateNow = DateTime.Now;
-            string dateNow = Convert.ToString(DateNow);
+            DateTime DateTimeNow = DateTime.Now;
 
             SaveFileDialog fileDialog = new SaveFileDialog();
             if (!string.IsNullOrEmpty(fighter1) && !string.IsNullOrEmpty(fighter2))
             {
-                fileDialog.FileName = $"{fighter1} vs. {fighter2} ({DateNow.ToString("dd/MM/yyyy")})";
+                fileDialog.FileName = $"{fighter1} vs. {fighter2} ({DateTimeNow.ToString("dd/MM/yyyy")})";
             }
             else
             {
-                fileDialog.FileName = $"unnamed vs. unnamed ({DateNow.ToString("dd/MM/yyyy")})";
+                fileDialog.FileName = $"unnamed vs. unnamed ({DateTimeNow.ToString("dd/MM/yyyy")})";
             }
             fileDialog.Filter = "Text files (*.txt)|*.txt";
             fileDialog.RestoreDirectory = true;
 
-            string directoryPath; // Directory path
-
-            if (textBox2.Text != null && textBox2.Text != "")
-                l_totalPoints = Convert.ToInt32(textBox2.Text); // Left total points
-            if (textBox3.Text != null && textBox3.Text != "")
-                r_totalPoints = Convert.ToInt32(textBox3.Text); // Right total points
+            int l_totalPoints = !string.IsNullOrEmpty(textBox2.Text) ? Convert.ToInt32(textBox2.Text) : 0;
+            int r_totalPoints = !string.IsNullOrEmpty(textBox3.Text) ? Convert.ToInt32(textBox3.Text) : 0;
 
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                directoryPath = fileDialog.InitialDirectory + fileDialog.FileName;
+                string directoryPath = fileDialog.InitialDirectory + fileDialog.FileName;
 
-                if (!File.Exists(fileDialog.FileName)) // If file doesn't exist
+                if (!File.Exists(fileDialog.FileName))
                 {
                     File.Create(fileDialog.FileName).Close();
 
                     using (StreamWriter sw = File.AppendText(fileDialog.FileName))
                     {
-                        sw.WriteLine("[ DATE: " + dateNow + " ]"); // [ DATE: 1.1.2020 18.00.00 ]
+                        sw.WriteLine("[ DATE: " + DateTimeNow.ToString() + " ]"); // [ DATE: 1.1.2020 18.00.00 ]
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
@@ -441,13 +425,13 @@ namespace SimpleMMAScoreboard
                         }
                     }
                 }
-                else // If file already exists
+                else
                 {
                     File.WriteAllText(@directoryPath, string.Empty); // Overwrite the old file
 
                     using (StreamWriter sw = File.AppendText(fileDialog.FileName))
                     {
-                        sw.WriteLine("[ SAVED: " + dateNow + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
+                        sw.WriteLine("[ SAVED: " + DateTimeNow.ToString() + " ]"); // [ SAVED: 1.1.2020 18.00.00 ]
                         sw.WriteLine(""); // < Line feed >
                         sw.WriteLine("---");
                         sw.WriteLine(""); // < Line feed >
@@ -507,28 +491,26 @@ namespace SimpleMMAScoreboard
             {
                 relativePointBox.Items.Clear();
                 relativePointBox.Items.Add(10);
+                relativePointBox.SelectedIndex = 0;
             }
         }
 
         private void ResetPointBoxItems(ComboBox pointBox)
         {
             pointBox.Items.Clear();
+            pointBox.Items.Add("-");
             pointBox.Items.Add(10);
             pointBox.Items.Add(9);
             pointBox.Items.Add(8);
             pointBox.Items.Add(7);
+            pointBox.SelectedIndex = 0;
         }
 
-        private bool PointsChecker(ComboBox pointBox)
+        private bool PointsAllowed(ComboBox pointBox)
         {
             int thisPointBoxPoints = Convert.ToInt32(pointBox.Text);
 
-            if (thisPointBoxPoints == 7 || thisPointBoxPoints == 8 || thisPointBoxPoints == 9 || thisPointBoxPoints == 10)
-            {
-                return true;
-            }
-
-            return false;
+            return thisPointBoxPoints == 7 || thisPointBoxPoints == 8 || thisPointBoxPoints == 9 || thisPointBoxPoints == 10;
         }
         #endregion
 
@@ -683,313 +665,137 @@ namespace SimpleMMAScoreboard
         #endregion
 
         #region Clearers
-        void Clear_Round1()
+        void ClearRound1()
         {
-            int l_round1_value = l_points1 - l_cuts1;
-            int r_round1_value = r_points1 - r_cuts1;
-
             l_points1 = 0;
             l_cuts1 = 0;
 
             r_points1 = 0;
             r_cuts1 = 0;
 
-            box1_Set = false;
             comboBox1.Enabled = true;
-
-            minus_box1_Set = false;
             comboBox2.Enabled = true;
-
-            r_box1_Set = false;
             comboBox21.Enabled = true;
-
-            r_minus_box1_Set = false;
             comboBox20.Enabled = true;
 
             comboBox1.Text = null;
+            comboBox1.SelectedIndex = 0;
             comboBox2.Text = null;
-
+            comboBox2.SelectedIndex = 0;
             comboBox21.Text = null;
+            comboBox21.SelectedIndex = 0;
             comboBox20.Text = null;
-
-            count -= l_round1_value;
-            count2 -= r_round1_value;
-
-            if (count == 0)
-            {
-                textBox2.Text = null;
-            }
-            else
-            {
-                textBox2.Text = Convert.ToString(count);
-            }
-
-            if (count2 == 0)
-            {
-                textBox3.Text = null;
-            }
-            else
-            {
-                textBox3.Text = Convert.ToString(count2);
-            }
+            comboBox20.SelectedIndex = 0;
 
             ResetPointBoxItems(comboBox1);
             ResetPointBoxItems(comboBox21);
         }
 
-        void Clear_Round2()
+        void ClearRound2()
         {
-            int l_round2_value = l_points2 - l_cuts2;
-            int r_round2_value = r_points2 - r_cuts2;
-
             l_points2 = 0;
             l_cuts2 = 0;
 
             r_points2 = 0;
             r_cuts2 = 0;
 
-            box2_Set = false;
             comboBox3.Enabled = true;
-
-            minus_box2_Set = false;
             comboBox4.Enabled = true;
-
-            r_box2_Set = false;
             comboBox19.Enabled = true;
-
-            r_minus_box2_Set = false;
             comboBox18.Enabled = true;
 
             comboBox3.Text = null;
+            comboBox3.SelectedIndex = 0;
             comboBox4.Text = null;
-
+            comboBox4.SelectedIndex = 0;
             comboBox19.Text = null;
+            comboBox19.SelectedIndex = 0;
             comboBox18.Text = null;
-
-            count -= l_round2_value;
-            count2 -= r_round2_value;
-
-            if (count == 0)
-            {
-                textBox2.Text = null;
-            }
-            else
-            {
-                textBox2.Text = Convert.ToString(count);
-            }
-
-            if (count2 == 0)
-            {
-                textBox3.Text = null;
-            }
-            else
-            {
-                textBox3.Text = Convert.ToString(count2);
-            }
+            comboBox18.SelectedIndex = 0;
 
             ResetPointBoxItems(comboBox3);
             ResetPointBoxItems(comboBox19);
         }
 
-        void Clear_Round3()
+        void ClearRound3()
         {
-            int l_round3_value = l_points3 - l_cuts3;
-            int r_round3_value = r_points3 - r_cuts3;
-
             l_points3 = 0;
             l_cuts3 = 0;
 
             r_points3 = 0;
             r_cuts3 = 0;
 
-            box3_Set = false;
             comboBox8.Enabled = true;
-
-            minus_box3_Set = false;
             comboBox7.Enabled = true;
-
-            r_box3_Set = false;
             comboBox17.Enabled = true;
-
-            r_minus_box3_Set = false;
             comboBox16.Enabled = true;
 
             comboBox8.Text = null;
+            comboBox8.SelectedIndex = 0;
             comboBox7.Text = null;
-
+            comboBox7.SelectedIndex = 0;
             comboBox17.Text = null;
+            comboBox17.SelectedIndex = 0;
             comboBox16.Text = null;
-
-            count -= l_round3_value;
-            count2 -= r_round3_value;
-
-            if (count == 0)
-            {
-                textBox2.Text = null;
-            }
-            else
-            {
-                textBox2.Text = Convert.ToString(count);
-            }
-
-            if (count2 == 0)
-            {
-                textBox3.Text = null;
-            }
-            else
-            {
-                textBox3.Text = Convert.ToString(count2);
-            }
+            comboBox16.SelectedIndex = 0;
 
             ResetPointBoxItems(comboBox8);
             ResetPointBoxItems(comboBox17);
         }
 
-        void Clear_Round4()
+        void ClearRound4()
         {
-            int l_round4_value = l_points4 - l_cuts4;
-            int r_round4_value = r_points4 - r_cuts4;
-
             l_points4 = 0;
             l_cuts4 = 0;
 
             r_points4 = 0;
             r_cuts4 = 0;
 
-            box4_Set = false;
             comboBox6.Enabled = true;
-
-            minus_box4_Set = false;
             comboBox5.Enabled = true;
-
-            r_box4_Set = false;
             comboBox15.Enabled = true;
-
-            r_minus_box4_Set = false;
             comboBox14.Enabled = true;
 
             comboBox6.Text = null;
+            comboBox6.SelectedIndex = 0;
             comboBox5.Text = null;
-
+            comboBox5.SelectedIndex = 0;
             comboBox15.Text = null;
+            comboBox15.SelectedIndex = 0;
             comboBox14.Text = null;
-
-            count -= l_round4_value;
-            count2 -= r_round4_value;
-
-            if (count == 0)
-            {
-                textBox2.Text = null;
-            }
-            else
-            {
-                textBox2.Text = Convert.ToString(count);
-            }
-
-            if (count2 == 0)
-            {
-                textBox3.Text = null;
-            }
-            else
-            {
-                textBox3.Text = Convert.ToString(count2);
-            }
+            comboBox14.SelectedIndex = 0;
 
             ResetPointBoxItems(comboBox6);
             ResetPointBoxItems(comboBox15);
         }
 
-        void Clear_Round5()
+        void ClearRound5()
         {
-            int l_round5_value = l_points5 - l_cuts5;
-            int r_round5_value = r_points5 - r_cuts5;
-
             l_points5 = 0;
             l_cuts5 = 0;
 
             r_points5 = 0;
             r_cuts5 = 0;
 
-            box5_Set = false;
             comboBox10.Enabled = true;
-
-            minus_box5_Set = false;
             comboBox9.Enabled = true;
-
-            r_box5_Set = false;
             comboBox13.Enabled = true;
-
-            r_minus_box5_Set = false;
             comboBox12.Enabled = true;
 
             comboBox10.Text = null;
+            comboBox10.SelectedIndex = 0;
             comboBox9.Text = null;
-
+            comboBox9.SelectedIndex = 0;
             comboBox13.Text = null;
+            comboBox13.SelectedIndex = 0;
             comboBox12.Text = null;
-
-            count -= l_round5_value;
-            count2 -= r_round5_value;
-
-            if (count == 0)
-            {
-                textBox2.Text = null;
-            }
-            else
-            {
-                textBox2.Text = Convert.ToString(count);
-            }
-
-            if (count2 == 0)
-            {
-                textBox3.Text = null;
-            }
-            else
-            {
-                textBox3.Text = Convert.ToString(count2);
-            }
+            comboBox12.SelectedIndex = 0;
 
             ResetPointBoxItems(comboBox10);
             ResetPointBoxItems(comboBox13);
         }
 
-        private void Point_Box_Variables_Clear()
-        {
-            box1_Set = false;
-            box2_Set = false;
-            box3_Set = false;
-            box4_Set = false;
-            box5_Set = false;
-
-            r_box1_Set = false;
-            r_box2_Set = false;
-            r_box3_Set = false;
-            r_box4_Set = false;
-            r_box5_Set = false;
-        }
-
-        private void Minus_Point_Box_Variables_Clear()
-        {
-            minus_box1_Set = false;
-            minus_box2_Set = false;
-            minus_box3_Set = false;
-            minus_box4_Set = false;
-            minus_box5_Set = false;
-
-            r_minus_box1_Set = false;
-            r_minus_box2_Set = false;
-            r_minus_box3_Set = false;
-            r_minus_box4_Set = false;
-            r_minus_box5_Set = false;
-        }
-
-        private void Counter_Variables_Clear()
-        {
-            count = 0;
-            count2 = 0;
-        }
-
-        private void Text_Boxes_Clear()
+        private void TextBoxesClear()
         {
             // Fighters and total points
             textBox1.Text = null;
@@ -999,28 +805,48 @@ namespace SimpleMMAScoreboard
 
             // Points
             comboBox1.Text = null;
+            comboBox1.SelectedIndex = 0;
             comboBox2.Text = null;
+            comboBox2.SelectedIndex = 0;
             comboBox3.Text = null;
+            comboBox3.SelectedIndex = 0;
             comboBox4.Text = null;
+            comboBox4.SelectedIndex = 0;
             comboBox5.Text = null;
+            comboBox5.SelectedIndex = 0;
             comboBox6.Text = null;
+            comboBox6.SelectedIndex = 0;
             comboBox7.Text = null;
+            comboBox7.SelectedIndex = 0;
             comboBox8.Text = null;
+            comboBox8.SelectedIndex = 0;
             comboBox9.Text = null;
+            comboBox9.SelectedIndex = 0;
             comboBox10.Text = null;
+            comboBox10.SelectedIndex = 0;
             comboBox12.Text = null;
+            comboBox12.SelectedIndex = 0;
             comboBox13.Text = null;
+            comboBox13.SelectedIndex = 0;
             comboBox14.Text = null;
+            comboBox14.SelectedIndex = 0;
             comboBox15.Text = null;
+            comboBox15.SelectedIndex = 0;
             comboBox16.Text = null;
+            comboBox16.SelectedIndex = 0;
             comboBox17.Text = null;
+            comboBox17.SelectedIndex = 0;
             comboBox18.Text = null;
+            comboBox18.SelectedIndex = 0;
             comboBox19.Text = null;
+            comboBox19.SelectedIndex = 0;
             comboBox20.Text = null;
+            comboBox20.SelectedIndex = 0;
             comboBox21.Text = null;
+            comboBox21.SelectedIndex = 0;
         }
 
-        private void Box_Visibility_Clear()
+        private void BoxVisibilityClear()
         {
             // Re-disable round 4-5 stuff
             comboBox6.Enabled = false;
@@ -1051,7 +877,7 @@ namespace SimpleMMAScoreboard
             comboBox16.Enabled = true;
         }
 
-        private void Other_Variables_Clear()
+        private void OtherVariablesClear()
         {
             l_points1 = 0;
             l_points2 = 0;
@@ -1075,8 +901,6 @@ namespace SimpleMMAScoreboard
             r_cuts5 = 0;
             fighter1 = null;
             fighter2 = null;
-            l_totalPoints = 0;
-            r_totalPoints = 0;
         }
 
         private void ResetAllPointBoxItems()
@@ -1098,82 +922,111 @@ namespace SimpleMMAScoreboard
 
         }
 
-        private void Clear_All()
+        private void ClearAll()
         {
             // Rounds selector
             comboBox11.Text = "3";
+            comboBox11.SelectedIndex = 0;
             rounds_amount = 3;
 
             // Others
-            Point_Box_Variables_Clear();
-            Minus_Point_Box_Variables_Clear();
-            Counter_Variables_Clear();
-            Text_Boxes_Clear();
-            Box_Visibility_Clear();
-            Other_Variables_Clear();
+            TextBoxesClear();
+            BoxVisibilityClear();
+            OtherVariablesClear();
             ResetAllPointBoxItems();
         }
         #endregion
 
         #region RoundAmount
-        void Round_Amount_5()
+        void RoundAmount5()
         {
             rounds_amount = 5;
 
-            if (box4_Set == false)
+            if (!comboBox6.Enabled)
+            {
                 comboBox6.Enabled = true;
-            if (box5_Set == false)
+                comboBox6.Text = null;
+                comboBox6.SelectedIndex = 0;
+            }
+            if (!comboBox10.Enabled)
+            {
                 comboBox10.Enabled = true;
-            if (minus_box4_Set == false)
+                comboBox10.Text = null;
+                comboBox10.SelectedIndex = 0;
+            }
+            if (!comboBox5.Enabled)
+            {
                 comboBox5.Enabled = true;
-            if (minus_box5_Set == false)
+                comboBox5.Text = null;
+                comboBox5.SelectedIndex = 0;
+            }
+            if (!comboBox9.Enabled)
+            {
                 comboBox9.Enabled = true;
-            if (r_box5_Set == false)
+                comboBox9.Text = null;
+                comboBox9.SelectedIndex = 0;
+            }
+            if (!comboBox13.Enabled)
+            {
                 comboBox13.Enabled = true;
-            if (r_box4_Set == false)
+                comboBox13.Text = null;
+                comboBox13.SelectedIndex = 0;
+            }
+            if (!comboBox15.Enabled)
+            {
                 comboBox15.Enabled = true;
-            if (r_minus_box4_Set == false)
+                comboBox15.Text = null;
+                comboBox15.SelectedIndex = 0;
+            }
+            if (!comboBox14.Enabled)
+                {
                 comboBox14.Enabled = true;
-            if (r_minus_box5_Set == false)
+                comboBox14.Text = null;
+                comboBox14.SelectedIndex = 0;
+            }
+            if (!comboBox12.Enabled)
+            {
                 comboBox12.Enabled = true;
+                comboBox12.Text = null;
+                comboBox12.SelectedIndex = 0;
+            }
 
             resetR4_Button.Enabled = true;
             resetR5_Button.Enabled = true;
+
+            CalculateSidePoints(PointSide.Left);
+            CalculateSidePoints(PointSide.Right);
         }
 
-        void Round_Amount_3()
+        void RoundAmount3()
         {
             rounds_amount = 3;
-
-            int l_round4_value = l_points4 - l_cuts4, l_round5_value = l_points5 - l_cuts5,
-            r_round4_value = r_points4 - r_cuts4, r_round5_value = r_points5 - r_cuts5;
 
             comboBox6.Enabled = false;
             comboBox10.Enabled = false;
             comboBox5.Enabled = false;
             comboBox9.Enabled = false;
             comboBox6.Text = null;
+            comboBox6.SelectedIndex = 0;
             comboBox10.Text = null;
+            comboBox10.SelectedIndex = 0;
             comboBox5.Text = null;
+            comboBox5.SelectedIndex = 0;
             comboBox9.Text = null;
+            comboBox9.SelectedIndex = 0;
 
             comboBox13.Enabled = false;
             comboBox15.Enabled = false;
             comboBox14.Enabled = false;
             comboBox12.Enabled = false;
             comboBox13.Text = null;
+            comboBox13.SelectedIndex = 0;
             comboBox15.Text = null;
+            comboBox15.SelectedIndex = 0;
             comboBox14.Text = null;
+            comboBox14.SelectedIndex = 0;
             comboBox12.Text = null;
-
-            box4_Set = false;
-            box5_Set = false;
-            r_box4_Set = false;
-            r_box5_Set = false;
-            minus_box4_Set = false;
-            minus_box5_Set = false;
-            r_minus_box4_Set = false;
-            r_minus_box5_Set = false;
+            comboBox12.SelectedIndex = 0;
 
             l_points4 = 0;
             l_points5 = 0;
@@ -1187,51 +1040,64 @@ namespace SimpleMMAScoreboard
             resetR4_Button.Enabled = false;
             resetR5_Button.Enabled = false;
 
-            if (count > 0)
-            {
-                count -= l_round4_value + l_round5_value;
-                textBox2.Text = Convert.ToString(count);
-            }
-            if (count2 > 0)
-            {
-                count2 -= r_round4_value + r_round5_value;
-                textBox3.Text = Convert.ToString(count2);
-            }
+            CalculateSidePoints(PointSide.Left);
+            CalculateSidePoints(PointSide.Right);
         }
         #endregion
 
         #region Methods
-        private void HandlePoints(ComboBox thisPointsBox, ComboBox relationPointsBox, TextBox totalPointsBox, ref bool boxIsSet, ref int totalPoints, ref int count, bool isMinus)
+        private void HandlePoints(ComboBox thisPointsBox, ComboBox relationPointsBox, ref int thisPoints, bool isMinus, PointSide pointSide)
         {
-            if (thisPointsBox.Text != null && thisPointsBox.Text != "")
+            if (!string.IsNullOrEmpty(thisPointsBox.Text))
             {
-                if (boxIsSet == false)
+                if (thisPointsBox.Text == "-")
                 {
-                    if (PointsChecker(thisPointsBox) || isMinus)
+                    thisPoints = 0;
+                    CalculateSidePoints(pointSide);
+                }
+                else if (PointsAllowed(thisPointsBox) || isMinus)
+                {
+                    if (!isMinus)
                     {
-                        if (!isMinus && relationPointsBox.SelectedIndex < 0)
-                        {
-                            PointsForerunner(thisPointsBox, relationPointsBox);
-                        }
-
-                        boxIsSet = true;
-                        thisPointsBox.Enabled = false;
-
-                        totalPoints = Convert.ToInt32(thisPointsBox.Text);
-
-                        if (!isMinus)
-                        {
-                            count += Convert.ToInt32(thisPointsBox.Text);
-                        }
-                        else
-                        {
-                            count -= Convert.ToInt32(thisPointsBox.Text);
-                        }
-
-                        totalPointsBox.Text = Convert.ToString(count);
+                        PointsForerunner(thisPointsBox, relationPointsBox);
                     }
+
+                    thisPoints = Convert.ToInt32(thisPointsBox.Text);
+                    CalculateSidePoints(pointSide);
                 }
             }
+        }
+
+        private void CalculateSidePoints(PointSide pointSide)
+        {
+            int totalPoints;
+            switch (pointSide)
+            {
+                case PointSide.Left:
+                    totalPoints = (l_points1 + l_points2 + l_points3 + l_points4 + l_points5) - (l_cuts1 + l_cuts2 + l_cuts3 + l_cuts4 + l_cuts5);
+                    textBox2.Text = totalPoints > 0 ? Convert.ToString(totalPoints) : string.Empty;
+                    break;
+                case PointSide.Right:
+                    totalPoints = (r_points1 + r_points2 + r_points3 + r_points4 + r_points5) - (r_cuts1 + r_cuts2 + r_cuts3 + r_cuts4 + r_cuts5);
+                    textBox3.Text = totalPoints > 0 ? Convert.ToString(totalPoints) : string.Empty;
+                    break;
+            }
+        }
+
+        private PointSide GetSide(ComboBox comboBox)
+        {
+            if (comboBox == comboBox1 || comboBox == comboBox3 || comboBox == comboBox8 || comboBox == comboBox6 || comboBox == comboBox10
+                || comboBox == comboBox2 || comboBox == comboBox4 || comboBox == comboBox7 || comboBox == comboBox5 || comboBox == comboBox9)
+            {
+                return PointSide.Left;
+            }
+            else if (comboBox == comboBox21 || comboBox == comboBox19 || comboBox == comboBox17 || comboBox == comboBox15 || comboBox == comboBox13
+                || comboBox == comboBox20 || comboBox == comboBox18 || comboBox == comboBox16 || comboBox == comboBox14 || comboBox == comboBox12)
+            {
+                return PointSide.Right;
+            }
+
+            throw new ArgumentException("comboBox not recognized");
         }
         #endregion
     }
