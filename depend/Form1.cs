@@ -16,10 +16,10 @@ namespace SimpleMMAScoreboard
     public partial class Form1 : Form
     {
         public string AppName { get { return appName; } }
-        private const string appName = "Simple MMA Scoreboard";
+        private readonly string appName = "Simple MMA Scoreboard";
 
         public string AppCreator { get { return appCreator; } }
-        private const string appCreator = "Kim19003";
+        private readonly string appCreator = "Kim19003";
 
         #region Variables
         // Counters
@@ -52,6 +52,8 @@ namespace SimpleMMAScoreboard
             InitializeComponent();
 
             MaximizeBox = false;
+
+            comboBox11.SelectedIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -501,10 +503,10 @@ namespace SimpleMMAScoreboard
         {
             int thisPointBoxPoints = Convert.ToInt32(thisPointBox.Text);
 
-            if (thisPointBoxPoints == 8 || thisPointBoxPoints == 9)
+            if (thisPointBoxPoints == 7 || thisPointBoxPoints == 8 || thisPointBoxPoints == 9)
             {
-                relativePointBox.Items.Clear(); // Clear all relative point box points
-                relativePointBox.Items.Add(10); // Add "10" as an only option for the relative point box
+                relativePointBox.Items.Clear();
+                relativePointBox.Items.Add(10);
             }
         }
 
@@ -514,13 +516,14 @@ namespace SimpleMMAScoreboard
             pointBox.Items.Add(10);
             pointBox.Items.Add(9);
             pointBox.Items.Add(8);
+            pointBox.Items.Add(7);
         }
 
-        private bool PointsChecker(ComboBox pointBox) // Checks that inserted points are allowed
+        private bool PointsChecker(ComboBox pointBox)
         {
             int thisPointBoxPoints = Convert.ToInt32(pointBox.Text);
 
-            if (thisPointBoxPoints == 8 || thisPointBoxPoints == 9 || thisPointBoxPoints == 10)
+            if (thisPointBoxPoints == 7 || thisPointBoxPoints == 8 || thisPointBoxPoints == 9 || thisPointBoxPoints == 10)
             {
                 return true;
             }
@@ -1206,7 +1209,7 @@ namespace SimpleMMAScoreboard
                 {
                     if (PointsChecker(thisPointsBox) || isMinus)
                     {
-                        if (!isMinus)
+                        if (!isMinus && relationPointsBox.SelectedIndex < 0)
                         {
                             PointsForerunner(thisPointsBox, relationPointsBox);
                         }
