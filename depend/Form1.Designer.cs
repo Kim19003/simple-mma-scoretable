@@ -76,11 +76,6 @@ namespace SimpleMMAScoreboard
             this.label10 = new System.Windows.Forms.Label();
             this.clearButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
-            this.resetR1_Button = new System.Windows.Forms.Button();
-            this.resetR2_Button = new System.Windows.Forms.Button();
-            this.resetR3_Button = new System.Windows.Forms.Button();
-            this.resetR4_Button = new System.Windows.Forms.Button();
-            this.resetR5_Button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -864,90 +859,6 @@ namespace SimpleMMAScoreboard
             this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // resetR1_Button
-            // 
-            this.resetR1_Button.BackColor = System.Drawing.Color.White;
-            this.resetR1_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetR1_Button.FlatAppearance.BorderSize = 0;
-            this.resetR1_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetR1_Button.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetR1_Button.Location = new System.Drawing.Point(742, 176);
-            this.resetR1_Button.Name = "resetR1_Button";
-            this.resetR1_Button.Size = new System.Drawing.Size(111, 33);
-            this.resetR1_Button.TabIndex = 7;
-            this.resetR1_Button.Text = "Reset Round 1";
-            this.resetR1_Button.UseVisualStyleBackColor = false;
-            this.resetR1_Button.Visible = false;
-            this.resetR1_Button.Click += new System.EventHandler(this.resetR1_Button_Click);
-            // 
-            // resetR2_Button
-            // 
-            this.resetR2_Button.BackColor = System.Drawing.Color.White;
-            this.resetR2_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetR2_Button.FlatAppearance.BorderSize = 0;
-            this.resetR2_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetR2_Button.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetR2_Button.Location = new System.Drawing.Point(742, 215);
-            this.resetR2_Button.Name = "resetR2_Button";
-            this.resetR2_Button.Size = new System.Drawing.Size(111, 34);
-            this.resetR2_Button.TabIndex = 12;
-            this.resetR2_Button.Text = "Reset Round 2";
-            this.resetR2_Button.UseVisualStyleBackColor = false;
-            this.resetR2_Button.Visible = false;
-            this.resetR2_Button.Click += new System.EventHandler(this.resetR2_Button_Click);
-            // 
-            // resetR3_Button
-            // 
-            this.resetR3_Button.BackColor = System.Drawing.Color.White;
-            this.resetR3_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetR3_Button.FlatAppearance.BorderSize = 0;
-            this.resetR3_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetR3_Button.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetR3_Button.Location = new System.Drawing.Point(742, 255);
-            this.resetR3_Button.Name = "resetR3_Button";
-            this.resetR3_Button.Size = new System.Drawing.Size(111, 33);
-            this.resetR3_Button.TabIndex = 17;
-            this.resetR3_Button.Text = "Reset Round 3";
-            this.resetR3_Button.UseVisualStyleBackColor = false;
-            this.resetR3_Button.Visible = false;
-            this.resetR3_Button.Click += new System.EventHandler(this.resetR3_Button_Click);
-            // 
-            // resetR4_Button
-            // 
-            this.resetR4_Button.BackColor = System.Drawing.Color.White;
-            this.resetR4_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetR4_Button.FlatAppearance.BorderSize = 0;
-            this.resetR4_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetR4_Button.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetR4_Button.Location = new System.Drawing.Point(742, 294);
-            this.resetR4_Button.Name = "resetR4_Button";
-            this.resetR4_Button.Size = new System.Drawing.Size(111, 33);
-            this.resetR4_Button.TabIndex = 22;
-            this.resetR4_Button.Text = "Reset Round 4";
-            this.resetR4_Button.UseVisualStyleBackColor = false;
-            this.resetR4_Button.Visible = false;
-            this.resetR4_Button.EnabledChanged += new System.EventHandler(this.Round4_EC);
-            this.resetR4_Button.Click += new System.EventHandler(this.resetR4_Button_Click);
-            this.resetR4_Button.Paint += new System.Windows.Forms.PaintEventHandler(this.Round4_Paint);
-            // 
-            // resetR5_Button
-            // 
-            this.resetR5_Button.BackColor = System.Drawing.Color.White;
-            this.resetR5_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.resetR5_Button.FlatAppearance.BorderSize = 0;
-            this.resetR5_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.resetR5_Button.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetR5_Button.Location = new System.Drawing.Point(742, 333);
-            this.resetR5_Button.Name = "resetR5_Button";
-            this.resetR5_Button.Size = new System.Drawing.Size(111, 33);
-            this.resetR5_Button.TabIndex = 27;
-            this.resetR5_Button.Text = "Reset Round 5";
-            this.resetR5_Button.UseVisualStyleBackColor = false;
-            this.resetR5_Button.Visible = false;
-            this.resetR5_Button.EnabledChanged += new System.EventHandler(this.Round5_EC);
-            this.resetR5_Button.Click += new System.EventHandler(this.resetR5_Button_Click);
-            this.resetR5_Button.Paint += new System.Windows.Forms.PaintEventHandler(this.Round5_Paint);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -1051,7 +962,7 @@ namespace SimpleMMAScoreboard
             this.panel5.Controls.Add(this.whiteColor_Button);
             this.panel5.Controls.Add(this.pinkColor_Button);
             this.panel5.Controls.Add(this.blueColor_Button);
-            this.panel5.Location = new System.Drawing.Point(771, 650);
+            this.panel5.Location = new System.Drawing.Point(583, 604);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(82, 20);
             this.panel5.TabIndex = 65;
@@ -1098,14 +1009,9 @@ namespace SimpleMMAScoreboard
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(107)))));
-            this.ClientSize = new System.Drawing.Size(911, 691);
+            this.ClientSize = new System.Drawing.Size(736, 673);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.resetR5_Button);
-            this.Controls.Add(this.resetR4_Button);
-            this.Controls.Add(this.resetR3_Button);
-            this.Controls.Add(this.resetR2_Button);
-            this.Controls.Add(this.resetR1_Button);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.clearButton);
             this.Controls.Add(this.label6);
@@ -1222,11 +1128,6 @@ namespace SimpleMMAScoreboard
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button clearButton;
         private System.Windows.Forms.Button saveButton;
-        private System.Windows.Forms.Button resetR1_Button;
-        private System.Windows.Forms.Button resetR2_Button;
-        private System.Windows.Forms.Button resetR3_Button;
-        private System.Windows.Forms.Button resetR4_Button;
-        private System.Windows.Forms.Button resetR5_Button;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

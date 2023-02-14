@@ -322,7 +322,7 @@ namespace SimpleMMAScoreboard
             var btn = (Button)sender;
             var drawBrush = new SolidBrush(btn.ForeColor);
             var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
-            resetR4_Button.Text = string.Empty;
+            //resetR4_Button.Text = string.Empty;
             e.Graphics.DrawString("Reset Round 4", btn.Font, drawBrush, e.ClipRectangle, sf);
             drawBrush.Dispose();
             sf.Dispose();
@@ -340,7 +340,7 @@ namespace SimpleMMAScoreboard
             var btn = (Button)sender;
             var drawBrush = new SolidBrush(btn.ForeColor);
             var sf = new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center };
-            resetR5_Button.Text = string.Empty;
+            //resetR5_Button.Text = string.Empty;
             e.Graphics.DrawString("Reset Round 5", btn.Font, drawBrush, e.ClipRectangle, sf);
             drawBrush.Dispose();
             sf.Dispose();
@@ -588,11 +588,11 @@ namespace SimpleMMAScoreboard
             comboBox15.BackColor = Color.Gainsboro;
             comboBox13.BackColor = Color.Gainsboro;
 
-            resetR1_Button.BackColor = Color.Gainsboro;
-            resetR2_Button.BackColor = Color.Gainsboro;
-            resetR3_Button.BackColor = Color.Gainsboro;
-            resetR4_Button.BackColor = Color.Gainsboro;
-            resetR5_Button.BackColor = Color.Gainsboro;
+            //resetR1_Button.BackColor = Color.Gainsboro;
+            //resetR2_Button.BackColor = Color.Gainsboro;
+            //resetR3_Button.BackColor = Color.Gainsboro;
+            //resetR4_Button.BackColor = Color.Gainsboro;
+            //resetR5_Button.BackColor = Color.Gainsboro;
 
             textBox2.BackColor = Color.Gainsboro;
             panel3.BackColor = Color.Gainsboro;
@@ -648,11 +648,11 @@ namespace SimpleMMAScoreboard
             comboBox15.BackColor = Color.White;
             comboBox13.BackColor = Color.White;
 
-            resetR1_Button.BackColor = Color.White;
-            resetR2_Button.BackColor = Color.White;
-            resetR3_Button.BackColor = Color.White;
-            resetR4_Button.BackColor = Color.White;
-            resetR5_Button.BackColor = Color.White;
+            //resetR1_Button.BackColor = Color.White;
+            //resetR2_Button.BackColor = Color.White;
+            //resetR3_Button.BackColor = Color.White;
+            //resetR4_Button.BackColor = Color.White;
+            //resetR5_Button.BackColor = Color.White;
 
             textBox2.BackColor = Color.White;
             panel3.BackColor = Color.White;
@@ -858,8 +858,8 @@ namespace SimpleMMAScoreboard
             comboBox14.Enabled = false;
             comboBox12.Enabled = false;
 
-            resetR4_Button.Enabled = false;
-            resetR5_Button.Enabled = false;
+            //resetR4_Button.Enabled = false;
+            //resetR5_Button.Enabled = false;
 
             // Re-enable round 1-3 stuff
             comboBox1.Enabled = true;
@@ -991,8 +991,8 @@ namespace SimpleMMAScoreboard
                 comboBox12.SelectedIndex = 0;
             }
 
-            resetR4_Button.Enabled = true;
-            resetR5_Button.Enabled = true;
+            //resetR4_Button.Enabled = true;
+            //resetR5_Button.Enabled = true;
 
             CalculateSidePoints(PointSide.Left);
             CalculateSidePoints(PointSide.Right);
@@ -1037,8 +1037,8 @@ namespace SimpleMMAScoreboard
             r_cuts4 = 0;
             r_cuts5 = 0;
 
-            resetR4_Button.Enabled = false;
-            resetR5_Button.Enabled = false;
+            //resetR4_Button.Enabled = false;
+            //resetR5_Button.Enabled = false;
 
             CalculateSidePoints(PointSide.Left);
             CalculateSidePoints(PointSide.Right);
